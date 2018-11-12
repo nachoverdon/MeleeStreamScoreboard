@@ -19,10 +19,10 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
      */
     public PlayersInfoPanel() {
         initComponents();
-        panelPlayer1.setPlayerNumber(1);
-        panelPlayer2.setPlayerNumber(2);
-        panelPlayer3.setPlayerNumber(3);
-        panelPlayer4.setPlayerNumber(4);
+        panelPlayer1.setBorderTitle("Player 1");
+        panelPlayer2.setBorderTitle("Player 2");
+        panelPlayer3.setBorderTitle("Player 3");
+        panelPlayer4.setBorderTitle("Player 4");
         setVisible(true);
 
         teamsComponents = new JComponent[]{

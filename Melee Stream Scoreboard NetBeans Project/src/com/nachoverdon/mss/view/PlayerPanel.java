@@ -5,11 +5,17 @@
  */
 package com.nachoverdon.mss.view;
 
+import java.awt.Component;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.ImageIcon;
+import javax.swing.JList;
 import javax.swing.border.TitledBorder;
 import javax.swing.text.html.CSS;
 import org.json.*;
@@ -32,6 +38,7 @@ public class PlayerPanel extends javax.swing.JPanel {
         }
         
         changeColorsComboBox();
+        initFlags();
     }
 
     /**
@@ -100,8 +107,6 @@ public class PlayerPanel extends javax.swing.JPanel {
             }
         });
 
-        comboBoxFlag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----", "USA", "Spain" }));
-
         comboBoxSponsor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----", "TSM", "C9", "Alliance" }));
 
         labelName.setText("Name");
@@ -169,9 +174,26 @@ public class PlayerPanel extends javax.swing.JPanel {
         getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setPlayerNumber(int number) {
+    public void setBorderTitle(String title) {
         TitledBorder border = (TitledBorder)getBorder();
-        border.setTitle("Player " + number);
+        border.setTitle(title);
+    }
+    
+    private void initFlags() {
+        comboBoxFlag.removeAllItems();
+        comboBoxFlag.setRenderer(new FlagRenderer());
+        File dir = new File("img/icons/flags");
+        File[] iconFiles = dir.listFiles();
+        
+        Object[] items = new Object[iconFiles.length];
+            
+        for (int i = 0; i < items.length; i++) {
+            String name = iconFiles[i].getName()
+                .substring(0, iconFiles[i].getName().length() - 4);
+            
+            items[i] = new ImageIcon(iconFiles[i].getPath());
+            comboBoxFlag.addItem(name);
+        }
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
@@ -224,4 +246,18 @@ public class PlayerPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelSponsor;
     private javax.swing.JSpinner spinnerScore;
     // End of variables declaration//GEN-END:variables
+}
+
+class FlagRenderer extends DefaultListCellRenderer {
+    @Override
+    public Component getListCellRendererComponent(JList<?> list, Object value,
+            int index, boolean isSelected, boolean cellHasFocus) {
+        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        
+        String name = value.toString();
+        this.setText(name);
+        this.setIcon(new ImageIcon("img/icons/flags/" + name + ".png"));
+        
+        return this;
+    }
 }
