@@ -1,0 +1,22 @@
+.full { position: absolute; width: 1280px; height: 40px; }
+.btm { bottom: -40px; }
+.top { top: -40px; }
+
+.games { background: url('../images/versus2-btm-game.png'); }
+.matches { background: url('../images/versus2-top-match.png'); }
+.players { background: url('../images/versus2-top-players.png'); }
+.scores { background: url('../images/versus2-top-scores.png'); }
+
+.games .game { position: absolute; width: 260px; height: 30px; }
+.games .game1 { top: 4px; left: 510px; }
+
+.matches .match { position: absolute; width: 200px; height: 30px; }
+.matches .match1 { top: 1px; left: 540px; }
+
+.players .player { position: absolute; width: 340px; height: 30px; }
+.players .player1 { top: 6px; left: 140px; text-align: left; }
+.players .player2 { top: 6px; right: 140px; text-align: right; }
+
+.scores .score { position: absolute; width: 40px; height: 30px; font-size: 24px; }
+.scores .score1 { top: 6px; left: 490px; }
+.scores .score2 { top: 6px; right: 490px; }

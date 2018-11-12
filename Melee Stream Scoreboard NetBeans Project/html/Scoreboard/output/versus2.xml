@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<versus2>
+	<player1>{{EMP}} EMP Hiro</player1>
+	<player1A>{{EMP}} EMP Hiro</player1A>
+	<player1B />
+	<player2>Jaxel  {{TW}} @8wayrun</player2>
+	<player2A>Jaxel  {{TW}} @8wayrun</player2A>
+	<player2B />
+	<score1>0</score1>
+	<score1A>0</score1A>
+	<score1B />
+	<score2>0</score2>
+	<score2A>0</score2A>
+	<score2B />
+	<match>MM || Money Match</match>
+	<matchA>MM</matchA>
+	<matchB>Money Match</matchB>
+	<game>SF5 || Street Fighter V</game>
+	<gameA>SF5</gameA>
+	<gameB>Street Fighter V</gameB>
+	<visible>true</visible>
+	<time>635953054624909123</time>
+</versus2>

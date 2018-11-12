@@ -1,0 +1,14 @@
+body {
+	position: relative; width: 1280px; margin: 0 auto; overflow: hidden; white-space: nowrap;
+	color: #FFF; font: bold 16px 'Century Gothic'; line-height: 30px; text-align: center;
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+.overflow { overflow: hidden; text-overflow: ellipsis; }
+
+span { display: inline-block; height: 18px; width: 18px; margin: 3px 2px -3px; }
+span.icon-8WR { background: url('../icons/8WR.png'); background-size: 100%; }
+span.icon-FB { background: url('../icons/FB.png'); background-size: 100%; }
+span.icon-TW { background: url('../icons/TW.png'); background-size: 100%; }
+span.icon-TWC { background: url('../icons/TWC.png'); background-size: 100%; }
+span.icon-YT { background: url('../icons/YT.png'); background-size: 100%; }

@@ -1,0 +1,8 @@
+.full { position: absolute; width: 1280px; height: 40px; }
+.btm { bottom: -40px; }
+
+.events { background: url('../images/event-btm.png'); }
+
+.events .event { position: absolute; width: 380px; height: 30px; }
+.events .event1 { bottom: 0px; left: 120px; }
+.events .event2 { bottom: 0px; right: 120px; }
