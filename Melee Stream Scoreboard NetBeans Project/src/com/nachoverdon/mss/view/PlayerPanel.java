@@ -34,6 +34,7 @@ public class PlayerPanel extends javax.swing.JPanel {
      */
     public PlayerPanel() {
         initComponents();
+        initNames();
         initCharacters();
         initSponsors();
         initFlags();
@@ -176,6 +177,14 @@ public class PlayerPanel extends javax.swing.JPanel {
         border.setTitle(title);
     }
     
+    private void initNames() {
+        JSONArray names = new JSONObject(readFile("data/players.json")).getJSONArray("players");
+        
+        for (int i = 0; i < names.length(); i++) {
+            comboBoxName.addItem(names.getString(i));
+        }
+    }
+    
     private void initCharacters() {
         comboBoxCharacter.removeAllItems();
         comboBoxCharacter.setRenderer(new IconRenderer());
@@ -231,7 +240,10 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
-        // TODO add your handling code here:
+        JSONObject file = new JSONObject(readFile("data/players.json"));
+        
+        // check if new name is in json, and add it if not
+        // save file
     }//GEN-LAST:event_comboBoxNameActionPerformed
 
     public static String readFile(String filename) {
