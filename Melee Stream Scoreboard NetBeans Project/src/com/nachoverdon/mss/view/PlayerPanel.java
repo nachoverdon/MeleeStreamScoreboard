@@ -10,6 +10,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
@@ -24,21 +26,21 @@ import org.json.*;
  * @author Nacho Verdón Blázquez
  */
 public class PlayerPanel extends javax.swing.JPanel {
-
-    static JSONObject json;
+    
+    static ImageIcon noSponsorIcon = new ImageIcon("img/icons/sponsors/nosponsor.png");
     
     /**
      * Creates new form PlayerPanel
      */
     public PlayerPanel() {
         initComponents();
+        initCharacters();
+        initSponsors();
+        initFlags();
         
-        if (json == null) {
-            json = new JSONObject(readFile("data/characters_colors.json"));
-        }
+        comboBoxColor.setRenderer(new IconRenderer());
         
         changeColorsComboBox();
-        initFlags();
     }
 
     /**
@@ -70,8 +72,6 @@ public class PlayerPanel extends javax.swing.JPanel {
         labelScore.setMinimumSize(new java.awt.Dimension(65, 14));
         labelScore.setPreferredSize(new java.awt.Dimension(65, 14));
 
-        comboBoxColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vanilla" }));
-
         labelCharacter.setText("Character");
         labelCharacter.setMaximumSize(new java.awt.Dimension(65, 14));
         labelCharacter.setMinimumSize(new java.awt.Dimension(65, 14));
@@ -100,14 +100,11 @@ public class PlayerPanel extends javax.swing.JPanel {
             }
         });
 
-        comboBoxCharacter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bowser", "Captain Falcon", "Donkey Kong", "Dr. Mario", "Falco", "Fox", "Ganondorf", "Ice Climbers", "Jigglypuff", "Kirby", "Link", "Luigi", "Mario", "Marth", "Mewtwo", "Mr. Game & Watch", "Ness", "Peach", "Pichu", "Pikachu", "Roy", "Samus", "Sheik", "Yoshi", "Young Link", "Zelda" }));
         comboBoxCharacter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxCharacterActionPerformed(evt);
             }
         });
-
-        comboBoxSponsor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----", "TSM", "C9", "Alliance" }));
 
         labelName.setText("Name");
         labelName.setMaximumSize(new java.awt.Dimension(65, 14));
@@ -179,19 +176,56 @@ public class PlayerPanel extends javax.swing.JPanel {
         border.setTitle(title);
     }
     
+    private void initCharacters() {
+        comboBoxCharacter.removeAllItems();
+        comboBoxCharacter.setRenderer(new IconRenderer());
+        String path = "img/icons/stock_icons/";
+//        JSONObject json = new JSONObject(readFile("data/sponsors.json")).getJSONObject("sponsors");
+        File[] characters = new File(path).listFiles();
+        
+        for (File character: characters) {
+            ImageIcon icon = new ImageIcon(path + character.getName() + "/vanilla.png");
+            icon = new ImageIcon(icon.getImage().getScaledInstance(16, 16, java.awt.Image.SCALE_FAST));
+            
+            IconItem item = new IconItem(character.getName(), icon);
+            comboBoxCharacter.addItem(item);
+        }
+    }
+    
+    private void initSponsors() {
+        comboBoxSponsor.removeAllItems();
+        comboBoxSponsor.setRenderer(new IconRenderer());
+        
+        JSONObject json = new JSONObject(readFile("data/sponsors.json")).getJSONObject("sponsors");
+
+        comboBoxSponsor.addItem(new IconItem("No Sponsor", noSponsorIcon));
+        
+        for (String key: json.keySet()) {
+            String path = "img/icons/sponsors/" + json.getString(key) + ".png";
+            File iconFile = new File(path);
+            ImageIcon icon;
+            if (iconFile.exists()) {
+                icon = new ImageIcon(path);
+            } else {
+                icon = noSponsorIcon;
+            }
+            
+            IconItem item = new IconItem(key, icon);
+            comboBoxSponsor.addItem(item);
+        }
+    }
+    
     private void initFlags() {
         comboBoxFlag.removeAllItems();
         comboBoxFlag.setRenderer(new FlagRenderer());
         File dir = new File("img/icons/flags");
         File[] iconFiles = dir.listFiles();
-        
-        Object[] items = new Object[iconFiles.length];
             
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < iconFiles.length; i++) {
             String name = iconFiles[i].getName()
                 .substring(0, iconFiles[i].getName().length() - 4);
+           
             
-            items[i] = new ImageIcon(iconFiles[i].getPath());
             comboBoxFlag.addItem(name);
         }
     }
@@ -218,14 +252,34 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     public void changeColorsComboBox() {
-        String character = (String)comboBoxCharacter.getSelectedItem();
-        JSONArray jarr = json.getJSONObject("characters").getJSONArray(character.toLowerCase());
+        IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
+        String character = selected.name;
+        File[] files = new File("img/icons/stock_icons/" + character).listFiles();
         
         comboBoxColor.removeAllItems();
         
-        for (int i = 0; i < jarr.length(); i++) {
-            comboBoxColor.addItem(jarr.getString(i));
-        } 
+        for (File file: files) {
+            String name = file.getName();
+            name = name.substring(0, file.getName().length() - 4);
+            name = name.substring(0, 1).toUpperCase() + name.substring(1);
+            
+            ImageIcon icon = new ImageIcon("img/icons/stock_icons/" + character + "/" + name.toLowerCase() + ".png");
+            icon = new ImageIcon(icon.getImage().getScaledInstance(16, 16, java.awt.Image.SCALE_FAST));
+            
+            IconItem item = new IconItem(
+                name,
+                icon
+            );
+            
+            comboBoxColor.addItem(item);
+        }
+        
+        for (int i = 0; i < comboBoxColor.getItemCount(); i++) {
+            if (comboBoxColor.getItemAt(i).name.equals("Vanilla")) {
+                comboBoxColor.setSelectedIndex(i);
+                break;
+            }
+        }
     }
     
     private void comboBoxCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCharacterActionPerformed
@@ -233,11 +287,11 @@ public class PlayerPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_comboBoxCharacterActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> comboBoxCharacter;
-    private javax.swing.JComboBox<String> comboBoxColor;
+    private javax.swing.JComboBox<IconItem> comboBoxCharacter;
+    private javax.swing.JComboBox<IconItem> comboBoxColor;
     private javax.swing.JComboBox<String> comboBoxFlag;
     private javax.swing.JComboBox<String> comboBoxName;
-    private javax.swing.JComboBox<String> comboBoxSponsor;
+    private javax.swing.JComboBox<IconItem> comboBoxSponsor;
     private javax.swing.JLabel labelCharacter;
     private javax.swing.JLabel labelColor;
     private javax.swing.JLabel labelFlag;
@@ -248,16 +302,39 @@ public class PlayerPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 }
 
-class FlagRenderer extends DefaultListCellRenderer {
+class IconRenderer extends DefaultListCellRenderer {    
     @Override
     public Component getListCellRendererComponent(JList<?> list, Object value,
             int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
         
-        String name = value.toString();
-        this.setText(name);
+        IconItem item = (IconItem) value;
+        
+        this.setText(item.name);
+        this.setIcon(item.icon);
+        
+        return this;
+    }
+}
+class FlagRenderer extends DefaultListCellRenderer {    
+    @Override
+    public Component getListCellRendererComponent(JList<?> list, Object value,
+            int index, boolean isSelected, boolean cellHasFocus) {
+        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        
+        String name = (String) value;
+        this.setText(name.toUpperCase());
         this.setIcon(new ImageIcon("img/icons/flags/" + name + ".png"));
         
         return this;
     }
+}
+
+class IconItem {
+    public IconItem(String name, ImageIcon icon) {
+        this.name = name;
+        this.icon = icon;
+    }
+    public String name;
+    public ImageIcon icon;
 }

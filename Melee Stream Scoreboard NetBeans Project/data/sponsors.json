@@ -1,14 +1,15 @@
 
 {
-	"sponsors": [
-		"TSM",
-		"Cloud9",
-		"Alliance",
-		"PG",
-		"Liquid",
-		"Echo Fox",
-		"MVG",
-		"VGBootCamp",
-		"Tempo Storm",
-	]
+	"sponsors": {
+		"TSM": "tsm",
+		"Cloud9": "cloud9",
+		"Alliance": "alliance",
+		"PG": "pg",
+		"Liquid": "liquid",
+		"Echo Fox": "echo_fox",
+		"MVG": "mvg",
+		"VGBootCamp": "vgbootcamp",
+		"Tempo Storm": "tempo_storm",
+		"Valencia": "valencia",
+	}
 }
