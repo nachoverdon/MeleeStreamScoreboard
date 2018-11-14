@@ -26,7 +26,6 @@ public class PlayerPanel extends javax.swing.JPanel {
      * Creates new form PlayerPanel
      */
     public PlayerPanel() {
-        Icons.init();
         initComponents();
         initNames();
         initCharacters();
@@ -185,19 +184,16 @@ public class PlayerPanel extends javax.swing.JPanel {
     private void initNames() {
         comboBoxName.addItem("");
         
-        for (String name: FileUtils.readNames()) {
+        for (String name: FileUtils.getNames()) {
             comboBoxName.addItem(name.trim());
         }
-        
-        comboBoxName.setSelectedIndex(0);
     }
     
     private void initCharacters() {
         comboBoxCharacter.removeAllItems();
         comboBoxCharacter.setRenderer(new IconRenderer());
 
-        JSONObject charJson = FileUtils.readJSON("data/characters_colors.json")
-            .getJSONObject("characters");
+        JSONObject charJson = FileUtils.getCharacters();
         
         String[] characters = new String[]{};
         characters = charJson.keySet().toArray(characters);
@@ -215,8 +211,7 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initSponsors() {
-        JSONObject json = FileUtils.readJSON("data/sponsors.json")
-            .getJSONObject("sponsors");        
+        JSONObject json = FileUtils.getSponsors();
         ImageIcon noSponsor = Icons.getSponsors().get("No sponsor");
         
         comboBoxSponsor.removeAllItems();
@@ -260,8 +255,7 @@ public class PlayerPanel extends javax.swing.JPanel {
     
     public void changeColorsComboBox() {
         IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
-        JSONArray colorsArr = FileUtils.readJSON("data/characters_colors.json")
-            .getJSONObject("characters").getJSONArray(selected.name);
+        JSONArray colorsArr = FileUtils.getColors(selected.name);
         
         String[] colors = new String[]{};
         colors = colorsArr.toList().toArray(colors);

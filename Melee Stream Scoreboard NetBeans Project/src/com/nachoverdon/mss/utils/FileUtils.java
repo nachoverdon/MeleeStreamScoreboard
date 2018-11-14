@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Collections;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -16,6 +17,17 @@ import org.json.JSONObject;
  * @author bazoo
  */
 public class FileUtils {
+    private static String[] names;
+    private static JSONObject charactersJson, sponsorsJson;
+    
+    public static void init() {
+        names = readFile("data/players.txt", true).split("\n");
+        Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
+        charactersJson = readJSON("data/characters.json")
+            .getJSONObject("characters");
+        sponsorsJson = readJSON("data/sponsors.json").getJSONObject("sponsors");  
+    }
+    
     public static JSONObject readJSON(String path) {
         return new JSONObject(readFile(path));
     }
@@ -48,11 +60,19 @@ public class FileUtils {
         return result;
     }
     
-    public static String[] readNames() {
-        String[] names = readFile("data/players.txt", true).split("\n");
-        
-        Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
-        
+    public static String[] getNames() {        
         return names;
+    }
+    
+    public static JSONObject getCharacters() {
+        return charactersJson;
+    }
+    
+    public static JSONObject getSponsors() {
+        return sponsorsJson;  
+    }
+    
+    public static JSONArray getColors(String character) {
+        return charactersJson.getJSONArray(character);
     }
 }

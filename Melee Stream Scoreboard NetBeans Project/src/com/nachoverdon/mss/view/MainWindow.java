@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss.view;
 
+import com.nachoverdon.mss.model.Icons;
+import com.nachoverdon.mss.utils.FileUtils;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -20,6 +22,8 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
     public MainWindow() {
+        FileUtils.init();
+        Icons.init();
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);

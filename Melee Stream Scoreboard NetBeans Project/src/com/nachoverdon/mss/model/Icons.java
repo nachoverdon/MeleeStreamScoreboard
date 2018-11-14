@@ -31,7 +31,7 @@ public class Icons {
     }
     
     private static void initCharacters() {
-        JSONObject charJson = FileUtils.readJSON("data/characters_colors.json")
+        JSONObject charJson = FileUtils.readJSON("data/characters.json")
             .getJSONObject("characters");
         String path = "img/icons/stock_icons/";
         colors = new HashMap();
