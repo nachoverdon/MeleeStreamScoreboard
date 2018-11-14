@@ -7,11 +7,10 @@ package com.nachoverdon.mss.view;
 
 import com.nachoverdon.mss.model.IconItem;
 import com.nachoverdon.mss.model.Icons;
-import com.nachoverdon.mss.utils.JSONReader;
+import com.nachoverdon.mss.utils.FileUtils;
 import java.awt.Component;
-import java.awt.Image;
-import java.io.File;
 import java.util.Arrays;
+import java.util.Collections;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
@@ -48,28 +47,30 @@ public class PlayerPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelName = new javax.swing.JLabel();
         labelScore = new javax.swing.JLabel();
-        comboBoxColor = new javax.swing.JComboBox<>();
         labelCharacter = new javax.swing.JLabel();
         labelColor = new javax.swing.JLabel();
         labelSponsor = new javax.swing.JLabel();
         labelFlag = new javax.swing.JLabel();
         comboBoxName = new javax.swing.JComboBox<>();
-        comboBoxCharacter = new javax.swing.JComboBox<>();
-        comboBoxFlag = new javax.swing.JComboBox<>();
-        comboBoxSponsor = new javax.swing.JComboBox<>();
-        labelName = new javax.swing.JLabel();
         spinnerScore = new javax.swing.JSpinner();
+        comboBoxCharacter = new javax.swing.JComboBox<>();
+        comboBoxColor = new javax.swing.JComboBox<>();
+        comboBoxSponsor = new javax.swing.JComboBox<>();
+        comboBoxFlag = new javax.swing.JComboBox<>();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Player X", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
+
+        labelName.setText("Name");
+        labelName.setMaximumSize(new java.awt.Dimension(65, 14));
+        labelName.setMinimumSize(new java.awt.Dimension(65, 14));
+        labelName.setPreferredSize(new java.awt.Dimension(65, 14));
 
         labelScore.setText("Score");
         labelScore.setMaximumSize(new java.awt.Dimension(65, 14));
         labelScore.setMinimumSize(new java.awt.Dimension(65, 14));
         labelScore.setPreferredSize(new java.awt.Dimension(65, 14));
-
-        comboBoxColor.setMinimumSize(new java.awt.Dimension(28, 30));
-        comboBoxColor.setPreferredSize(new java.awt.Dimension(28, 30));
 
         labelCharacter.setText("Character");
         labelCharacter.setMaximumSize(new java.awt.Dimension(65, 14));
@@ -99,6 +100,9 @@ public class PlayerPanel extends javax.swing.JPanel {
             }
         });
 
+        spinnerScore.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        spinnerScore.setMaximumSize(new java.awt.Dimension(37, 26));
+
         comboBoxCharacter.setMinimumSize(new java.awt.Dimension(28, 30));
         comboBoxCharacter.setPreferredSize(new java.awt.Dimension(28, 30));
         comboBoxCharacter.addActionListener(new java.awt.event.ActionListener() {
@@ -107,19 +111,14 @@ public class PlayerPanel extends javax.swing.JPanel {
             }
         });
 
-        comboBoxFlag.setMinimumSize(new java.awt.Dimension(28, 30));
-        comboBoxFlag.setPreferredSize(new java.awt.Dimension(28, 30));
+        comboBoxColor.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxColor.setPreferredSize(new java.awt.Dimension(28, 30));
 
         comboBoxSponsor.setMinimumSize(new java.awt.Dimension(28, 30));
         comboBoxSponsor.setPreferredSize(new java.awt.Dimension(28, 30));
 
-        labelName.setText("Name");
-        labelName.setMaximumSize(new java.awt.Dimension(65, 14));
-        labelName.setMinimumSize(new java.awt.Dimension(65, 14));
-        labelName.setPreferredSize(new java.awt.Dimension(65, 14));
-
-        spinnerScore.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-        spinnerScore.setMaximumSize(new java.awt.Dimension(37, 26));
+        comboBoxFlag.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxFlag.setPreferredSize(new java.awt.Dimension(28, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -184,20 +183,23 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initNames() {
-        String[] names = JSONReader.readFile("data/players.txt", true).split("\n");
+        String[] names = FileUtils.readFile("data/players.txt", true).split("\n");
         
+        Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
         comboBoxName.addItem("");
         
         for (String name: names) {
-            comboBoxName.addItem(name);
+            comboBoxName.addItem(name.trim());
         }
+        
+        comboBoxName.setSelectedIndex(0);
     }
     
     private void initCharacters() {
         comboBoxCharacter.removeAllItems();
         comboBoxCharacter.setRenderer(new IconRenderer());
 
-        JSONObject charJson = JSONReader.read("data/characters_colors.json")
+        JSONObject charJson = FileUtils.readJSON("data/characters_colors.json")
             .getJSONObject("characters");
         
         String[] characters = new String[]{};
@@ -216,7 +218,7 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initSponsors() {
-        JSONObject json = JSONReader.read("data/sponsors.json")
+        JSONObject json = FileUtils.readJSON("data/sponsors.json")
             .getJSONObject("sponsors");        
         ImageIcon noSponsor = Icons.getSponsors().get("No sponsor");
         
@@ -261,7 +263,7 @@ public class PlayerPanel extends javax.swing.JPanel {
     
     public void changeColorsComboBox() {
         IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
-        JSONArray colorsArr = JSONReader.read("data/characters_colors.json")
+        JSONArray colorsArr = FileUtils.readJSON("data/characters_colors.json")
             .getJSONObject("characters").getJSONArray(selected.name);
         
         String[] colors = new String[]{};

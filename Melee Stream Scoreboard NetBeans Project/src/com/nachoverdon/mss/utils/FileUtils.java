@@ -13,8 +13,8 @@ import org.json.JSONObject;
  *
  * @author bazoo
  */
-public class JSONReader {
-    public static JSONObject read(String path) {
+public class FileUtils {
+    public static JSONObject readJSON(String path) {
         return new JSONObject(readFile(path));
     }
     
@@ -24,19 +24,25 @@ public class JSONReader {
     
     public static String readFile(String filename, boolean split) {
         String result = "";
+        
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
+            
             while (line != null) {
                 sb.append(line);
+                
                 if (split) sb.append("\n");
+                
                 line = br.readLine();
             }
+            
             result = sb.toString();
         } catch(Exception e) {
             e.printStackTrace();
         }
+        
         return result;
     }
 }

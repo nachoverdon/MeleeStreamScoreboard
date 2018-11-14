@@ -5,7 +5,7 @@
  */
 package com.nachoverdon.mss.model;
 
-import com.nachoverdon.mss.utils.JSONReader;
+import com.nachoverdon.mss.utils.FileUtils;
 import java.awt.Image;
 import java.io.File;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class Icons {
     }
     
     private static void initCharacters() {
-        JSONObject charJson = JSONReader.read("data/characters_colors.json")
+        JSONObject charJson = FileUtils.readJSON("data/characters_colors.json")
             .getJSONObject("characters");
         String path = "img/icons/stock_icons/";
         colors = new HashMap();
@@ -52,7 +52,7 @@ public class Icons {
     }
     
     private static void initSponsors() {
-        JSONObject sponsorsJson = JSONReader.read("data/sponsors.json")
+        JSONObject sponsorsJson = FileUtils.readJSON("data/sponsors.json")
             .getJSONObject("sponsors");
         String path = "img/icons/sponsors/";
         ImageIcon noSponsor = new ImageIcon(path + "nosponsor.png");
