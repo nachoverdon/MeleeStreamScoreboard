@@ -1,13 +1,12 @@
-
 {
 	"characters": {
-		"bowser": [
+		"Bowser": [
 			"Vanilla",
 			"Black",
 			"Blue",
 			"Red",
 		],
-		"captain falcon": [
+		"Captain Falcon": [
 			"Vanilla",
 			"Black",
 			"Blue",
@@ -15,53 +14,53 @@
 			"Red",
 			"White",
 		],
-		"donkey kong": [
+		"Donkey Kong": [
 			"Vanilla",
 			"Black",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"dr. mario": [
+		"Dr. Mario": [
 			"Vanilla",
 			"Black",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"falco": [
+		"Falco": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"fox": [
+		"Fox": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"ganondorf": [
+		"Ganondorf": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Purple",
 			"Red",
 		],
-		"ice climbers": [
+		"Ice Climbers": [
 			"Vanilla",
 			"Green",
 			"Red",
 			"Orange",
 		],
-		"jigglypuff": [
+		"Jigglypuff": [
 			"Vanilla",
 			"Blue",
 			"Crown",
 			"Green",
 			"Red",
 		],
-		"kirby": [
+		"Kirby": [
 			"Vanilla",
 			"Blue",
 			"Green",
@@ -69,7 +68,7 @@
 			"White",
 			"Yellow",
 		],
-		"link": [
+		"Link": [
 			"Vanilla",
 			"Black",
 			"Blue",
@@ -77,85 +76,85 @@
 			"Red",
 			"White",
 		],
-		"luigi": [
+		"Luigi": [
 			"Vanilla",
 			"Blue",
 			"Red",
 			"White",
 		],
-		"mario": [
+		"Mario": [
 			"Vanilla",
 			"Black",
 			"Blue",
 			"Green",
 			"Yellow",
 		],
-		"marth": [
+		"Marth": [
 			"Vanilla",
 			"Black",
 			"Green",
 			"Red",
 			"White",
 		],
-		"mewtwo": [
+		"Mewtwo": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"mr. game & watch": [
+		"Mr. Game & Watch": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"ness": [
+		"Ness": [
 			"Vanilla",
 			"Blue",
 			"Yellow",
 			"Green",
 		],
-		"peach": [
+		"Peach": [
 			"Vanilla",
 			"Blue",
 			"Yellow",
 			"Green",
 			"White",
 		],
-		"pichu": [
+		"Pichu": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"pikachu": [
+		"Pikachu": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 		],
-		"roy": [
+		"Roy": [
 			"Vanilla",
 			"Blue",
 			"Gold",
 			"Green",
 			"Red",
 		],
-		"samus": [
+		"Samus": [
 			"Vanilla",
 			"Blue",
 			"Brown",
 			"Green",
 			"Pink",
 		],
-		"sheik": [
+		"Sheik": [
 			"Vanilla",
 			"Blue",
 			"Green",
 			"Red",
 			"White",
 		],
-		"yoshi": [
+		"Yoshi": [
 			"Vanilla",
 			"Blue",
 			"Cyan",
@@ -163,7 +162,7 @@
 			"Red",
 			"Yellow",
 		],
-		"young link": [
+		"Young Link": [
 			"Vanilla",
 			"Black",
 			"Blue",
@@ -171,7 +170,7 @@
 			"Red",
 			"White",
 		],
-		"zelda": [
+		"Zelda": [
 			"Vanilla",
 			"Blue",
 			"Green",

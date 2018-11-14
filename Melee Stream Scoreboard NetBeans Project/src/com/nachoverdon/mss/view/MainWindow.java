@@ -37,7 +37,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         tabbedPane = new javax.swing.JTabbedPane();
         generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
-        playersInfoPanel1 = new com.nachoverdon.mss.view.PlayersInfoPanel();
         serverInfoPanel1 = new com.nachoverdon.mss.view.ServerInfoPanel();
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
@@ -46,10 +45,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Melee Stream Scoreboard");
+        setPreferredSize(new java.awt.Dimension(575, 454));
         setResizable(false);
 
         tabbedPane.addTab("General", generalInfoPanel1);
-        tabbedPane.addTab("Players", playersInfoPanel1);
         tabbedPane.addTab("Server", serverInfoPanel1);
 
         buttonUpdate.setText("Update");
@@ -136,7 +135,6 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
-    private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel1;
     private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel1;
     private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables

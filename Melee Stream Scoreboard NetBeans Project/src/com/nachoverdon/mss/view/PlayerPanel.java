@@ -5,21 +5,17 @@
  */
 package com.nachoverdon.mss.view;
 
+import com.nachoverdon.mss.model.IconItem;
+import com.nachoverdon.mss.model.Icons;
+import com.nachoverdon.mss.utils.JSONReader;
 import java.awt.Component;
-import java.io.BufferedReader;
+import java.awt.Image;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ComboBoxModel;
+import java.util.Arrays;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
-import javax.swing.text.html.CSS;
 import org.json.*;
 /**
  *
@@ -27,12 +23,11 @@ import org.json.*;
  */
 public class PlayerPanel extends javax.swing.JPanel {
     
-    static ImageIcon noSponsorIcon = new ImageIcon("img/icons/sponsors/nosponsor.png");
-    
     /**
      * Creates new form PlayerPanel
      */
     public PlayerPanel() {
+        Icons.init();
         initComponents();
         initNames();
         initCharacters();
@@ -73,6 +68,9 @@ public class PlayerPanel extends javax.swing.JPanel {
         labelScore.setMinimumSize(new java.awt.Dimension(65, 14));
         labelScore.setPreferredSize(new java.awt.Dimension(65, 14));
 
+        comboBoxColor.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxColor.setPreferredSize(new java.awt.Dimension(28, 30));
+
         labelCharacter.setText("Character");
         labelCharacter.setMaximumSize(new java.awt.Dimension(65, 14));
         labelCharacter.setMinimumSize(new java.awt.Dimension(65, 14));
@@ -101,11 +99,19 @@ public class PlayerPanel extends javax.swing.JPanel {
             }
         });
 
+        comboBoxCharacter.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxCharacter.setPreferredSize(new java.awt.Dimension(28, 30));
         comboBoxCharacter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxCharacterActionPerformed(evt);
             }
         });
+
+        comboBoxFlag.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxFlag.setPreferredSize(new java.awt.Dimension(28, 30));
+
+        comboBoxSponsor.setMinimumSize(new java.awt.Dimension(28, 30));
+        comboBoxSponsor.setPreferredSize(new java.awt.Dimension(28, 30));
 
         labelName.setText("Name");
         labelName.setMaximumSize(new java.awt.Dimension(65, 14));
@@ -120,26 +126,26 @@ public class PlayerPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(labelSponsor, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(comboBoxSponsor, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(comboBoxCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(comboBoxName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboBoxCharacter, javax.swing.GroupLayout.Alignment.LEADING, 0, 128, Short.MAX_VALUE)
+                        .addComponent(labelCharacter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                        .addComponent(labelName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                        .addComponent(comboBoxName, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(labelColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelFlag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spinnerScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxColor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(comboBoxFlag, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelFlag, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addComponent(comboBoxFlag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +184,8 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initNames() {
-        JSONArray names = new JSONObject(readFile("data/players.json")).getJSONArray("players");
+        JSONArray names = JSONReader.read("data/players.json")
+            .getJSONArray("players");
         
         for (int i = 0; i < names.length(); i++) {
             comboBoxName.addItem(names.getString(i));
@@ -188,38 +195,41 @@ public class PlayerPanel extends javax.swing.JPanel {
     private void initCharacters() {
         comboBoxCharacter.removeAllItems();
         comboBoxCharacter.setRenderer(new IconRenderer());
-        String path = "img/icons/stock_icons/";
-//        JSONObject json = new JSONObject(readFile("data/sponsors.json")).getJSONObject("sponsors");
-        File[] characters = new File(path).listFiles();
+
+        JSONObject charJson = JSONReader.read("data/characters_colors.json")
+            .getJSONObject("characters");
         
-        for (File character: characters) {
-            ImageIcon icon = new ImageIcon(path + character.getName() + "/vanilla.png");
-            icon = new ImageIcon(icon.getImage().getScaledInstance(16, 16, java.awt.Image.SCALE_FAST));
+        String[] characters = new String[]{};
+        characters = charJson.keySet().toArray(characters);
+        Arrays.sort(characters);
+        
+        for (String character: characters) {
             
-            IconItem item = new IconItem(character.getName(), icon);
+            IconItem item = new IconItem(
+                character,
+                Icons.getColors().get(character + "Vanilla")
+            );
+
             comboBoxCharacter.addItem(item);
         }
     }
     
     private void initSponsors() {
+        JSONObject json = JSONReader.read("data/sponsors.json")
+            .getJSONObject("sponsors");        
+        ImageIcon noSponsor = Icons.getSponsors().get("No sponsor");
+        
         comboBoxSponsor.removeAllItems();
-        comboBoxSponsor.setRenderer(new IconRenderer());
+        comboBoxSponsor.setRenderer(new IconRenderer());        
+        comboBoxSponsor.addItem(new IconItem("No sponsor", noSponsor));
         
-        JSONObject json = new JSONObject(readFile("data/sponsors.json")).getJSONObject("sponsors");
-
-        comboBoxSponsor.addItem(new IconItem("No Sponsor", noSponsorIcon));
-        
-        for (String key: json.keySet()) {
-            String path = "img/icons/sponsors/" + json.getString(key) + ".png";
-            File iconFile = new File(path);
-            ImageIcon icon;
-            if (iconFile.exists()) {
-                icon = new ImageIcon(path);
-            } else {
-                icon = noSponsorIcon;
-            }
+        for (String sponsor: json.keySet()) {
+            if (sponsor == "No sponsor") continue;
+           
+            IconItem item = new IconItem(
+                sponsor, Icons.getSponsors().get(sponsor)
+            );
             
-            IconItem item = new IconItem(key, icon);
             comboBoxSponsor.addItem(item);
         }
     }
@@ -234,39 +244,22 @@ public class PlayerPanel extends javax.swing.JPanel {
             String name = iconFiles[i].getName()
                 .substring(0, iconFiles[i].getName().length() - 4);
            
-            
             comboBoxFlag.addItem(name);
         }
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
-        JSONObject file = new JSONObject(readFile("data/players.json"));
+        JSONObject file = JSONReader.read("data/players.json");
         
         // check if new name is in json, and add it if not
         // save file
     }//GEN-LAST:event_comboBoxNameActionPerformed
-
-    public static String readFile(String filename) {
-        String result = "";
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(filename));
-            StringBuilder sb = new StringBuilder();
-            String line = br.readLine();
-            while (line != null) {
-                sb.append(line);
-                line = br.readLine();
-            }
-            result = sb.toString();
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
     
     public void changeColorsComboBox() {
         IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
         String character = selected.name;
-        File[] files = new File("img/icons/stock_icons/" + character).listFiles();
+        File[] files = new File("img/icons/stock_icons/" + character)
+            .listFiles();
         
         comboBoxColor.removeAllItems();
         
@@ -275,8 +268,13 @@ public class PlayerPanel extends javax.swing.JPanel {
             name = name.substring(0, file.getName().length() - 4);
             name = name.substring(0, 1).toUpperCase() + name.substring(1);
             
-            ImageIcon icon = new ImageIcon("img/icons/stock_icons/" + character + "/" + name.toLowerCase() + ".png");
-            icon = new ImageIcon(icon.getImage().getScaledInstance(16, 16, java.awt.Image.SCALE_FAST));
+            ImageIcon icon = new ImageIcon(
+                "img/icons/stock_icons/" + character + "/" +
+                name.toLowerCase() + ".png"
+            );
+            icon = new ImageIcon(
+                icon.getImage().getScaledInstance(24, -1, Image.SCALE_FAST)
+            );
             
             IconItem item = new IconItem(
                 name,
@@ -340,13 +338,4 @@ class FlagRenderer extends DefaultListCellRenderer {
         
         return this;
     }
-}
-
-class IconItem {
-    public IconItem(String name, ImageIcon icon) {
-        this.name = name;
-        this.icon = icon;
-    }
-    public String name;
-    public ImageIcon icon;
 }
