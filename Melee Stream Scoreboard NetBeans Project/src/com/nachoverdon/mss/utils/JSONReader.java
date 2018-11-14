@@ -18,7 +18,11 @@ public class JSONReader {
         return new JSONObject(readFile(path));
     }
     
-    private static String readFile(String filename) {
+    public static String readFile(String filename) {
+        return readFile(filename, false);
+    }
+    
+    public static String readFile(String filename, boolean split) {
         String result = "";
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -26,12 +30,13 @@ public class JSONReader {
             String line = br.readLine();
             while (line != null) {
                 sb.append(line);
+                if (split) sb.append("\n");
                 line = br.readLine();
             }
             result = sb.toString();
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return result.trim();
+        return result;
     }
 }

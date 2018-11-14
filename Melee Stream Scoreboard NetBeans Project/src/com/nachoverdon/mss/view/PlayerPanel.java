@@ -184,11 +184,12 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initNames() {
-        JSONArray names = JSONReader.read("data/players.json")
-            .getJSONArray("players");
+        String[] names = JSONReader.readFile("data/players.txt", true).split("\n");
         
-        for (int i = 0; i < names.length(); i++) {
-            comboBoxName.addItem(names.getString(i));
+        comboBoxName.addItem("");
+        
+        for (String name: names) {
+            comboBoxName.addItem(name);
         }
     }
     
@@ -223,7 +224,11 @@ public class PlayerPanel extends javax.swing.JPanel {
         comboBoxSponsor.setRenderer(new IconRenderer());        
         comboBoxSponsor.addItem(new IconItem("No sponsor", noSponsor));
         
-        for (String sponsor: json.keySet()) {
+        String[] sponsors = new String[]{};
+        sponsors = json.keySet().toArray(sponsors);
+        Arrays.sort(sponsors);
+        
+        for (String sponsor: sponsors) {
             if (sponsor == "No sponsor") continue;
            
             IconItem item = new IconItem(
