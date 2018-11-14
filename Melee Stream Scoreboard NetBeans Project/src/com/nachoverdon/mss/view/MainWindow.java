@@ -40,8 +40,8 @@ public class MainWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         tabbedPane = new javax.swing.JTabbedPane();
-        generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
         playersInfoPanel1 = new com.nachoverdon.mss.view.PlayersInfoPanel();
+        generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
         serverInfoPanel1 = new com.nachoverdon.mss.view.ServerInfoPanel();
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
@@ -52,8 +52,8 @@ public class MainWindow extends javax.swing.JFrame {
         setTitle("Melee Stream Scoreboard");
         setResizable(false);
 
-        tabbedPane.addTab("General", generalInfoPanel1);
         tabbedPane.addTab("Players", playersInfoPanel1);
+        tabbedPane.addTab("General", generalInfoPanel1);
         tabbedPane.addTab("Server", serverInfoPanel1);
 
         buttonUpdate.setText("Update");

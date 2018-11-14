@@ -63,7 +63,7 @@ public class Icons {
         for (String sponsor: sponsorsJson.keySet()) {
             String fileName = sponsorsJson.getString(sponsor);
                 
-            ImageIcon icon = getScaledIcon(path + fileName + ".png", 16, -1);
+            ImageIcon icon = getScaledIcon(path + fileName + ".png", 32, -1);
             
             sponsors.put(sponsor, icon);
         }
