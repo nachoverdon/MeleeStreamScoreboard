@@ -183,12 +183,9 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initNames() {
-        String[] names = FileUtils.readFile("data/players.txt", true).split("\n");
-        
-        Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
         comboBoxName.addItem("");
         
-        for (String name: names) {
+        for (String name: FileUtils.readNames()) {
             comboBoxName.addItem(name.trim());
         }
         

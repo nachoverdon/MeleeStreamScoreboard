@@ -7,6 +7,8 @@ package com.nachoverdon.mss.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Arrays;
+import java.util.Collections;
 import org.json.JSONObject;
 
 /**
@@ -44,5 +46,13 @@ public class FileUtils {
         }
         
         return result;
+    }
+    
+    public static String[] readNames() {
+        String[] names = readFile("data/players.txt", true).split("\n");
+        
+        Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
+        
+        return names;
     }
 }
