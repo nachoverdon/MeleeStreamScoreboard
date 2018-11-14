@@ -7,6 +7,7 @@ package com.nachoverdon.mss.model;
 
 import com.nachoverdon.mss.utils.JSONReader;
 import java.awt.Image;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
@@ -41,12 +42,8 @@ public class Icons {
             for (int i = 0; i < colorsArr.length(); i++) {
                 String color = colorsArr.getString(i);
                 
-                ImageIcon icon = new ImageIcon(
-                    path + character + "/" + color + ".png"
-                );
-                
-                icon = new ImageIcon(
-                    icon.getImage().getScaledInstance(24, -1, Image.SCALE_SMOOTH)
+                ImageIcon icon = getScaledIcon(
+                    path + character + "/" + color + ".png", 24, -1
                 );
                 
                 colors.put(character + color, icon);
@@ -66,18 +63,25 @@ public class Icons {
         for (String sponsor: sponsorsJson.keySet()) {
             String fileName = sponsorsJson.getString(sponsor);
                 
-            ImageIcon icon = new ImageIcon(path + fileName + ".png");
-
-            icon = new ImageIcon(
-                icon.getImage().getScaledInstance(16, -1, Image.SCALE_SMOOTH)
-            );
+            ImageIcon icon = getScaledIcon(path + fileName + ".png", 16, -1);
             
             sponsors.put(sponsor, icon);
         }
     }
     
     private static void initFlags() {
-        
+        File dir = new File("img/icons/flags");
+        File[] iconFiles = dir.listFiles();
+        flags = new HashMap();
+            
+        for (int i = 0; i < iconFiles.length; i++) {
+            String name = iconFiles[i].getName()
+                .substring(0, iconFiles[i].getName().length() - 4);
+            
+            ImageIcon icon = getScaledIcon(iconFiles[i].getPath(), 16, -1);
+           
+            flags.put(name, icon);
+        }
     }
     
     public static Map<String, ImageIcon> getColors() {
@@ -90,5 +94,15 @@ public class Icons {
 
     public static Map<String, ImageIcon> getFlags() {
         return flags;
+    }
+    
+    private static ImageIcon getScaledIcon(String path, int width, int height) {
+        ImageIcon icon = new ImageIcon(path);
+
+        icon = new ImageIcon(
+            icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH)
+        );
+        
+        return icon;
     }
 }

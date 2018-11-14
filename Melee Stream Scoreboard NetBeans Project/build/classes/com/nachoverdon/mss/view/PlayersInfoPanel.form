@@ -33,9 +33,7 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="panelPlayer1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="buttonSwap1And2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="panelPlayer2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -47,16 +45,14 @@
                               <Component id="buttonSwap1And3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="buttonSwap3And4" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="panelPlayer4" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonSwap2And4" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="4" max="32767" attributes="0"/>
+              <EmptySpace pref="-12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,9 +61,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonSwap1And2" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="panelPlayer2" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="panelPlayer1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSwap1And2" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -80,8 +76,8 @@
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="panelPlayer4" min="-2" max="-2" attributes="0"/>
-                  <Component id="buttonSwap3And4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="panelPlayer3" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonSwap3And4" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>

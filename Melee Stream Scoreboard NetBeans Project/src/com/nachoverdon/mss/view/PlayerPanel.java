@@ -36,7 +36,7 @@ public class PlayerPanel extends javax.swing.JPanel {
         
         comboBoxColor.setRenderer(new IconRenderer());
         
-        changeColorsComboBox();
+//        changeColorsComboBox();
     }
 
     /**
@@ -145,7 +145,7 @@ public class PlayerPanel extends javax.swing.JPanel {
                     .addComponent(comboBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(spinnerScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(comboBoxFlag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(19, 19, 19))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,19 +237,18 @@ public class PlayerPanel extends javax.swing.JPanel {
     private void initFlags() {
         comboBoxFlag.removeAllItems();
         comboBoxFlag.setRenderer(new FlagRenderer());
-        File dir = new File("img/icons/flags");
-        File[] iconFiles = dir.listFiles();
-            
-        for (int i = 0; i < iconFiles.length; i++) {
-            String name = iconFiles[i].getName()
-                .substring(0, iconFiles[i].getName().length() - 4);
-           
-            comboBoxFlag.addItem(name);
+        
+        String[] flags = new String[]{};
+        flags = Icons.getFlags().keySet().toArray(flags);
+        Arrays.sort(flags);
+        
+        for (String flag: flags) {
+            comboBoxFlag.addItem(flag);
         }
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
-        JSONObject file = JSONReader.read("data/players.json");
+//        JSONObject file = JSONReader.read("data/players.json");
         
         // check if new name is in json, and add it if not
         // save file
@@ -257,38 +256,28 @@ public class PlayerPanel extends javax.swing.JPanel {
     
     public void changeColorsComboBox() {
         IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
-        String character = selected.name;
-        File[] files = new File("img/icons/stock_icons/" + character)
-            .listFiles();
+        JSONArray colorsArr = JSONReader.read("data/characters_colors.json")
+            .getJSONObject("characters").getJSONArray(selected.name);
         
-        comboBoxColor.removeAllItems();
+        String[] colors = new String[]{};
+        colors = colorsArr.toList().toArray(colors);
+        Arrays.sort(colors);
         
-        for (File file: files) {
-            String name = file.getName();
-            name = name.substring(0, file.getName().length() - 4);
-            name = name.substring(0, 1).toUpperCase() + name.substring(1);
-            
-            ImageIcon icon = new ImageIcon(
-                "img/icons/stock_icons/" + character + "/" +
-                name.toLowerCase() + ".png"
-            );
-            icon = new ImageIcon(
-                icon.getImage().getScaledInstance(24, -1, Image.SCALE_FAST)
-            );
+        comboBoxColor.removeAllItems();        
+        comboBoxColor.addItem(new IconItem(
+            "Vanilla",
+            Icons.getColors().get(selected.name + "Vanilla")
+        ));
+        
+        for (String color: colors) {
+            if (color.equals("Vanilla")) continue;
             
             IconItem item = new IconItem(
-                name,
-                icon
+                color,
+                Icons.getColors().get(selected.name + color)
             );
             
             comboBoxColor.addItem(item);
-        }
-        
-        for (int i = 0; i < comboBoxColor.getItemCount(); i++) {
-            if (comboBoxColor.getItemAt(i).name.equals("Vanilla")) {
-                comboBoxColor.setSelectedIndex(i);
-                break;
-            }
         }
     }
     
@@ -320,6 +309,8 @@ class IconRenderer extends DefaultListCellRenderer {
         
         IconItem item = (IconItem) value;
         
+        if (item == null) return this;
+        
         this.setText(item.name);
         this.setIcon(item.icon);
         
@@ -334,7 +325,7 @@ class FlagRenderer extends DefaultListCellRenderer {
         
         String name = (String) value;
         this.setText(name.toUpperCase());
-        this.setIcon(new ImageIcon("img/icons/flags/" + name + ".png"));
+        this.setIcon(Icons.getFlags().get(name));
         
         return this;
     }

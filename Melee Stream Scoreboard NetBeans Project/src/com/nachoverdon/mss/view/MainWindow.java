@@ -37,6 +37,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         tabbedPane = new javax.swing.JTabbedPane();
         generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
+        playersInfoPanel1 = new com.nachoverdon.mss.view.PlayersInfoPanel();
         serverInfoPanel1 = new com.nachoverdon.mss.view.ServerInfoPanel();
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
@@ -45,10 +46,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Melee Stream Scoreboard");
-        setPreferredSize(new java.awt.Dimension(575, 454));
         setResizable(false);
 
         tabbedPane.addTab("General", generalInfoPanel1);
+        tabbedPane.addTab("Players", playersInfoPanel1);
         tabbedPane.addTab("Server", serverInfoPanel1);
 
         buttonUpdate.setText("Update");
@@ -65,7 +66,7 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(buttonUpdate)
@@ -74,10 +75,10 @@ public class MainWindow extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonUpdate)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -135,6 +136,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
+    private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel1;
     private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel1;
     private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables
