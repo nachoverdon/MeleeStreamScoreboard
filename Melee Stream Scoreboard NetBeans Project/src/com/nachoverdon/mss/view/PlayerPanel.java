@@ -8,9 +8,9 @@ package com.nachoverdon.mss.view;
 import com.nachoverdon.mss.model.IconItem;
 import com.nachoverdon.mss.model.Icons;
 import com.nachoverdon.mss.utils.FileUtils;
+
 import java.awt.Component;
 import java.util.Arrays;
-import java.util.Collections;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JList;

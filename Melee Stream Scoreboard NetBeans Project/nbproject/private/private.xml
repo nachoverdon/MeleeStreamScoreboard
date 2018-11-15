@@ -5,11 +5,12 @@
         <group>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/view/GeneralInfoPanel.java</file>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/model/IconItem.java</file>
-            <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/utils/JSONReader.java</file>
+            <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/utils/FileUtils.java</file>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/view/PlayersInfoPanel.java</file>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/MeleeStreamScoreboard.java</file>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/model/Icons.java</file>
             <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/view/PlayerPanel.java</file>
+            <file>file:/Z:/projects/tools/Melee%20Stream%20Scoreboard/Melee%20Stream%20Scoreboard%20NetBeans%20Project/src/com/nachoverdon/mss/view/MainWindow.java</file>
         </group>
     </open-files>
 </project-private>
