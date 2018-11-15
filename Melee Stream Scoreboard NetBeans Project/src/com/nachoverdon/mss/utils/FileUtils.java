@@ -17,15 +17,17 @@ import org.json.JSONObject;
  * @author bazoo
  */
 public class FileUtils {
+    private static final String PLAYERS_FILE = "data/players.txt";
+    private static final String CHARACTERS_FILE = "data/characters.json";
+    private static final String SPONSORS_FILE = "data/sponsors.json";
     private static String[] names;
     private static JSONObject charactersJson, sponsorsJson;
     
     public static void init() {
-        names = readFile("data/players.txt", true).split("\n");
+        names = readFile(PLAYERS_FILE, true).split("\n");
         Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
-        charactersJson = readJSON("data/characters.json")
-            .getJSONObject("characters");
-        sponsorsJson = readJSON("data/sponsors.json").getJSONObject("sponsors");  
+        charactersJson = readJSON(CHARACTERS_FILE).getJSONObject("characters");
+        sponsorsJson = readJSON(SPONSORS_FILE).getJSONObject("sponsors");  
     }
     
     public static JSONObject readJSON(String path) {
