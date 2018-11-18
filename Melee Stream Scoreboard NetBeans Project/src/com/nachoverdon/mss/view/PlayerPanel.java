@@ -7,6 +7,7 @@ package com.nachoverdon.mss.view;
 
 import com.nachoverdon.mss.model.IconItem;
 import com.nachoverdon.mss.model.Icons;
+import com.nachoverdon.mss.utils.AutoCompletion;
 import com.nachoverdon.mss.utils.FileUtils;
 
 import java.awt.Component;
@@ -190,6 +191,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         for (String name: FileUtils.getNames()) {
             comboBoxName.addItem(name.trim());
         }
+        
+        AutoCompletion.enable(comboBoxName);
     }
     
     private void initCharacters() {

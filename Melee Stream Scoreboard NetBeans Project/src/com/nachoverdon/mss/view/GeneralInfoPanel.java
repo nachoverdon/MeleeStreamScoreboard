@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss.view;
 
+import com.nachoverdon.mss.utils.AutoCompletion;
+import com.nachoverdon.mss.utils.FileUtils;
 import org.json.JSONObject;
 
 /**
@@ -18,6 +20,8 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
      */
     public GeneralInfoPanel() {
         initComponents();
+        initPlayerCam();
+        enableAutocompletion();
     }
 
     /**
@@ -301,6 +305,37 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void enableAutocompletion() {
+        AutoCompletion.enable(comboBoxRound);
+        AutoCompletion.enable(comboBoxTournamentName);
+        AutoCompletion.enable(comboBoxBracket);
+        AutoCompletion.enable(comboBoxCaster1);
+        AutoCompletion.enable(comboBoxCaster2);
+        AutoCompletion.enable(comboBoxPlayerCam1);
+        AutoCompletion.enable(comboBoxPlayerCam2);
+        AutoCompletion.enable(comboBoxPlayerCam3);
+        AutoCompletion.enable(comboBoxPlayerCam4);
+        AutoCompletion.enable(comboBoxWebsite);
+        AutoCompletion.enable(comboBoxTwitch);
+        AutoCompletion.enable(comboBoxMessage);
+    }
+    
+    private void initPlayerCam() {
+        String[] players = FileUtils.getNames();
+        
+        comboBoxPlayerCam1.addItem("");
+        comboBoxPlayerCam2.addItem("");
+        comboBoxPlayerCam3.addItem("");
+        comboBoxPlayerCam4.addItem("");
+        
+        for (String player: players) {
+            comboBoxPlayerCam1.addItem(player);
+            comboBoxPlayerCam2.addItem(player);
+            comboBoxPlayerCam3.addItem(player);
+            comboBoxPlayerCam4.addItem(player);
+        }
+    }
+    
     private void comboBoxCaster1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCaster1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxCaster1ActionPerformed

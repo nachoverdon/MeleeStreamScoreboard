@@ -9,11 +9,8 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,14 +20,19 @@ import org.json.JSONObject;
  */
 public class FileUtils {
     private static final String PLAYERS_FILE = "data/players.txt";
+    private static final String CASTERS_FILE = "data/casters.txt";
     private static final String CHARACTERS_FILE = "data/characters.json";
     private static final String SPONSORS_FILE = "data/sponsors.json";
-    private static String[] names;
+    private static String[] names, casters;
     private static JSONObject charactersJson, sponsorsJson;
     
     public static void init() {
         names = readFile(PLAYERS_FILE, true).split("\n");
         Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
+        
+        casters = readFile(CASTERS_FILE, true).split("\n");
+        Collections.sort(Arrays.asList(casters), String.CASE_INSENSITIVE_ORDER);
+        
         charactersJson = readJSON(CHARACTERS_FILE).getJSONObject("characters");
         sponsorsJson = readJSON(SPONSORS_FILE).getJSONObject("sponsors");  
     }
@@ -83,6 +85,10 @@ public class FileUtils {
     
     public static String[] getNames() {        
         return names;
+    }
+    
+    public static String[] getCasters() {        
+        return casters;
     }
     
     public static JSONObject getCharacters() {
