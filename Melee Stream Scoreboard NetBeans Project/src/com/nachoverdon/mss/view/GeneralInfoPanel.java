@@ -20,6 +20,8 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
      */
     public GeneralInfoPanel() {
         initComponents();
+        initRounds();
+        initCasters();
         initPlayerCam();
         enableAutocompletion();
     }
@@ -320,19 +322,35 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         AutoCompletion.enable(comboBoxMessage);
     }
     
-    private void initPlayerCam() {
-        String[] players = FileUtils.getNames();
+    private void initRounds() {
+        comboBoxRound.addItem("");
         
+        for (String round: FileUtils.getRounds()) {
+            comboBoxRound.addItem(round);
+        }
+    }
+    
+    private void initPlayerCam() {       
         comboBoxPlayerCam1.addItem("");
         comboBoxPlayerCam2.addItem("");
         comboBoxPlayerCam3.addItem("");
         comboBoxPlayerCam4.addItem("");
         
-        for (String player: players) {
+        for (String player: FileUtils.getNames()) {
             comboBoxPlayerCam1.addItem(player);
             comboBoxPlayerCam2.addItem(player);
             comboBoxPlayerCam3.addItem(player);
             comboBoxPlayerCam4.addItem(player);
+        }
+    }
+    
+    private void initCasters() {
+        comboBoxCaster1.addItem("");
+        comboBoxCaster2.addItem("");
+        
+        for (String caster: FileUtils.getCasters()) {
+            comboBoxCaster1.addItem(caster);
+            comboBoxCaster2.addItem(caster);
         }
     }
     

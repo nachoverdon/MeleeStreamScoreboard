@@ -20,15 +20,19 @@ import org.json.JSONObject;
  */
 public class FileUtils {
     private static final String PLAYERS_FILE = "data/players.txt";
+    private static final String ROUNDS_FILE = "data/rounds.txt";
     private static final String CASTERS_FILE = "data/casters.txt";
     private static final String CHARACTERS_FILE = "data/characters.json";
     private static final String SPONSORS_FILE = "data/sponsors.json";
-    private static String[] names, casters;
+    private static String[] names, rounds, casters;
     private static JSONObject charactersJson, sponsorsJson;
     
     public static void init() {
         names = readFile(PLAYERS_FILE, true).split("\n");
         Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
+        
+        rounds = readFile(ROUNDS_FILE, true).split("\n");
+        Collections.sort(Arrays.asList(rounds), String.CASE_INSENSITIVE_ORDER);
         
         casters = readFile(CASTERS_FILE, true).split("\n");
         Collections.sort(Arrays.asList(casters), String.CASE_INSENSITIVE_ORDER);
@@ -85,6 +89,10 @@ public class FileUtils {
     
     public static String[] getNames() {        
         return names;
+    }
+    
+    public static String[] getRounds() {        
+        return rounds;
     }
     
     public static String[] getCasters() {        
