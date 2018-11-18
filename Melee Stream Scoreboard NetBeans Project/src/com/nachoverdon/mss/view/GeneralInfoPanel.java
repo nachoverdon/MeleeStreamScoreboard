@@ -30,12 +30,12 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         labelRound = new javax.swing.JLabel();
-        labelTournamentName = new javax.swing.JLabel();
+        labelBestOf = new javax.swing.JLabel();
         comboBoxRound = new javax.swing.JComboBox<>();
-        comboBoxTournamentName = new javax.swing.JComboBox<>();
-        labelWebsite = new javax.swing.JLabel();
+        spinnerBestOf = new javax.swing.JSpinner();
+        labelTournamentName = new javax.swing.JLabel();
         labelBracket = new javax.swing.JLabel();
-        comboBoxWebsite = new javax.swing.JComboBox<>();
+        comboBoxTournamentName = new javax.swing.JComboBox<>();
         comboBoxBracket = new javax.swing.JComboBox<>();
         labelCaster1 = new javax.swing.JLabel();
         labelCaster2 = new javax.swing.JLabel();
@@ -49,6 +49,10 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         labelPlayerCam4 = new javax.swing.JLabel();
         comboBoxPlayerCam3 = new javax.swing.JComboBox<>();
         comboBoxPlayerCam4 = new javax.swing.JComboBox<>();
+        labelWebsite = new javax.swing.JLabel();
+        labelTwitch = new javax.swing.JLabel();
+        comboBoxWebsite = new javax.swing.JComboBox<>();
+        comboBoxTwitch = new javax.swing.JComboBox<>();
         labelMessage = new javax.swing.JLabel();
         comboBoxMessage = new javax.swing.JComboBox<>();
         buttonSend = new javax.swing.JButton();
@@ -59,7 +63,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         labelRound.setText("Round");
 
-        labelTournamentName.setText("Tournament name");
+        labelBestOf.setText("Best Of");
 
         comboBoxRound.setEditable(true);
         comboBoxRound.setMaximumSize(new java.awt.Dimension(128, 26));
@@ -69,23 +73,15 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
             }
         });
 
+        labelTournamentName.setText("Tournament name");
+
+        labelBracket.setText("Bracket");
+
         comboBoxTournamentName.setEditable(true);
         comboBoxTournamentName.setMaximumSize(new java.awt.Dimension(128, 26));
         comboBoxTournamentName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxTournamentNameActionPerformed(evt);
-            }
-        });
-
-        labelWebsite.setText("Website");
-
-        labelBracket.setText("Bracket");
-
-        comboBoxWebsite.setEditable(true);
-        comboBoxWebsite.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxWebsite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxWebsiteActionPerformed(evt);
             }
         });
 
@@ -157,6 +153,26 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
             }
         });
 
+        labelWebsite.setText("Website");
+
+        labelTwitch.setText("Twitch");
+
+        comboBoxWebsite.setEditable(true);
+        comboBoxWebsite.setMaximumSize(new java.awt.Dimension(128, 26));
+        comboBoxWebsite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxWebsiteActionPerformed(evt);
+            }
+        });
+
+        comboBoxTwitch.setEditable(true);
+        comboBoxTwitch.setMaximumSize(new java.awt.Dimension(128, 26));
+        comboBoxTwitch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxTwitchActionPerformed(evt);
+            }
+        });
+
         labelMessage.setText("Message");
 
         comboBoxMessage.setEditable(true);
@@ -180,38 +196,49 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                         .addComponent(comboBoxMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(labelCaster1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelWebsite, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelRound, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboBoxRound, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboBoxWebsite, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboBoxCaster1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(comboBoxPlayerCam1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(labelPlayerCam1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxTournamentName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelPlayerCam2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxCaster2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelCaster2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxBracket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxPlayerCam2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(labelBracket, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(labelMessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(comboBoxPlayerCam3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(comboBoxPlayerCam3, 0, 255, Short.MAX_VALUE)
+                                .addComponent(labelPlayerCam3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxPlayerCam4, 0, 255, Short.MAX_VALUE)))))
-                .addGap(10, 10, 10))
+                                .addComponent(comboBoxPlayerCam4, 0, 255, Short.MAX_VALUE)
+                                .addComponent(labelPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(labelCaster1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(labelRound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboBoxRound, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(comboBoxCaster1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(labelPlayerCam1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                        .addComponent(labelTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                        .addComponent(comboBoxTournamentName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(comboBoxPlayerCam1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(6, 6, 6)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(labelPlayerCam2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(comboBoxCaster2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelCaster2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(comboBoxBracket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelBracket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(spinnerBestOf)
+                                .addComponent(labelBestOf, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(comboBoxPlayerCam2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelWebsite, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                            .addComponent(comboBoxWebsite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBoxTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,19 +246,19 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRound)
-                    .addComponent(labelTournamentName))
+                    .addComponent(labelBestOf, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxRound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(spinnerBestOf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelBracket, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelTournamentName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxBracket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelWebsite)
-                    .addComponent(labelBracket, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxWebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxBracket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCaster1)
@@ -257,11 +284,20 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                     .addComponent(comboBoxPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTwitch)
+                    .addComponent(labelWebsite))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxTwitch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxWebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(labelMessage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSend)))
+                    .addComponent(buttonSend))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -309,12 +345,16 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxWebsiteActionPerformed
 
+    private void comboBoxTwitchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTwitchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxTwitchActionPerformed
+
     public JSONObject getInfo() {
         JSONObject json = new JSONObject();
         
         json.put("round", comboBoxRound.getSelectedItem());
+        json.put("bestof", spinnerBestOf.getValue());
         json.put("tournament", comboBoxTournamentName.getSelectedItem());
-        json.put("website", comboBoxWebsite.getSelectedItem());
         json.put("bracket", comboBoxBracket.getSelectedItem());
         json.put("caster1", comboBoxCaster1.getSelectedItem());
         json.put("caster2", comboBoxCaster2.getSelectedItem());
@@ -322,6 +362,8 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         json.put("player2", comboBoxPlayerCam2.getSelectedItem());
         json.put("player3", comboBoxPlayerCam3.getSelectedItem());
         json.put("player4", comboBoxPlayerCam4.getSelectedItem());
+        json.put("website", comboBoxWebsite.getSelectedItem());
+        json.put("twitch", comboBoxTwitch.getSelectedItem());
         return json;
     }
 
@@ -337,7 +379,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboBoxPlayerCam4;
     private javax.swing.JComboBox<String> comboBoxRound;
     private javax.swing.JComboBox<String> comboBoxTournamentName;
+    private javax.swing.JComboBox<String> comboBoxTwitch;
     private javax.swing.JComboBox<String> comboBoxWebsite;
+    private javax.swing.JLabel labelBestOf;
     private javax.swing.JLabel labelBracket;
     private javax.swing.JLabel labelCaster1;
     private javax.swing.JLabel labelCaster2;
@@ -348,6 +392,8 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelPlayerCam4;
     private javax.swing.JLabel labelRound;
     private javax.swing.JLabel labelTournamentName;
+    private javax.swing.JLabel labelTwitch;
     private javax.swing.JLabel labelWebsite;
+    private javax.swing.JSpinner spinnerBestOf;
     // End of variables declaration//GEN-END:variables
 }

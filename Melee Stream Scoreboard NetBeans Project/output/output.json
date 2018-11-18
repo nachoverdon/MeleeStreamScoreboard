@@ -1,16 +1,5 @@
 {
-  "general": {
-    "website": "website",
-    "round": "round",
-    "player1": "cam1",
-    "player2": "cam2",
-    "player3": "cam3",
-    "player4": "cam4",
-    "bracket": "bracket",
-    "tournament": "tournament",
-    "caster1": "caster1",
-    "caster2": "caster2"
-  },
+  "general": {"bestof": 0},
   "players": {
     "player1": {
       "score": 0,

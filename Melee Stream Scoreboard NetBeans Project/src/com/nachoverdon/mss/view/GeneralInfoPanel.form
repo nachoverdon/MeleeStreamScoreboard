@@ -35,47 +35,63 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="buttonSend" min="-2" pref="101" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="labelCaster1" max="32767" attributes="0"/>
-                          <Component id="labelWebsite" alignment="0" max="32767" attributes="0"/>
-                          <Component id="labelRound" alignment="0" max="32767" attributes="0"/>
-                          <Component id="comboBoxRound" alignment="0" max="32767" attributes="0"/>
-                          <Component id="comboBoxWebsite" alignment="0" max="32767" attributes="0"/>
-                          <Component id="comboBoxCaster1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="comboBoxPlayerCam1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="labelPlayerCam1" min="-2" pref="255" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labelTournamentName" alignment="0" max="32767" attributes="0"/>
-                              <Component id="comboBoxTournamentName" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelPlayerCam2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="comboBoxCaster2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="labelCaster2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="comboBoxBracket" alignment="0" max="32767" attributes="0"/>
-                              <Component id="comboBoxPlayerCam2" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="labelBracket" alignment="1" min="-2" pref="255" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Component id="labelMessage" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="comboBoxPlayerCam3" max="32767" attributes="0"/>
-                              <Component id="labelPlayerCam3" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="comboBoxPlayerCam3" pref="255" max="32767" attributes="0"/>
+                              <Component id="labelPlayerCam3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="labelPlayerCam4" max="32767" attributes="0"/>
                               <Component id="comboBoxPlayerCam4" pref="255" max="32767" attributes="0"/>
+                              <Component id="labelPlayerCam4" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="labelCaster1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="labelRound" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="comboBoxRound" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="comboBoxCaster1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="labelPlayerCam1" alignment="0" pref="255" max="32767" attributes="0"/>
+                                      <Component id="labelTournamentName" alignment="0" pref="255" max="32767" attributes="0"/>
+                                      <Component id="comboBoxTournamentName" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="comboBoxPlayerCam1" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="labelPlayerCam2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboBoxCaster2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelCaster2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="comboBoxBracket" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelBracket" alignment="0" max="32767" attributes="0"/>
+                              <Component id="spinnerBestOf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="labelBestOf" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="comboBoxPlayerCam2" alignment="1" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="labelWebsite" pref="255" max="32767" attributes="0"/>
+                          <Component id="comboBoxWebsite" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="comboBoxTwitch" min="-2" pref="255" max="-2" attributes="0"/>
+                          <Component id="labelTwitch" min="-2" pref="255" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,22 +101,22 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelRound" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelTournamentName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelBestOf" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxRound" alignment="3" max="32767" attributes="0"/>
-                  <Component id="comboBoxTournamentName" alignment="3" max="32767" attributes="0"/>
+                  <Component id="spinnerBestOf" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="labelWebsite" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelBracket" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                  <Component id="labelTournamentName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboBoxWebsite" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="comboBoxBracket" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="comboBoxTournamentName" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -133,12 +149,23 @@
                   <Component id="comboBoxPlayerCam4" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="labelTwitch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelWebsite" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="comboBoxTwitch" alignment="3" max="32767" attributes="0"/>
+                  <Component id="comboBoxWebsite" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Component id="labelMessage" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxMessage" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="buttonSend" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -149,9 +176,9 @@
         <Property name="text" type="java.lang.String" value="Round"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelTournamentName">
+    <Component class="javax.swing.JLabel" name="labelBestOf">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Tournament name"/>
+        <Property name="text" type="java.lang.String" value="Best Of"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxRound">
@@ -171,6 +198,18 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerBestOf">
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTournamentName">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tournament name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelBracket">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bracket"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JComboBox" name="comboBoxTournamentName">
       <Properties>
         <Property name="editable" type="boolean" value="true"/>
@@ -183,33 +222,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxTournamentNameActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="labelWebsite">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Website"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="labelBracket">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Bracket"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="comboBoxWebsite">
-      <Properties>
-        <Property name="editable" type="boolean" value="true"/>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[128, 26]"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxWebsiteActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -359,6 +371,50 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxPlayerCam4ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelWebsite">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Website"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelTwitch">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Twitch"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboBoxWebsite">
+      <Properties>
+        <Property name="editable" type="boolean" value="true"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[128, 26]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxWebsiteActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="comboBoxTwitch">
+      <Properties>
+        <Property name="editable" type="boolean" value="true"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[128, 26]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboBoxTwitchActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
