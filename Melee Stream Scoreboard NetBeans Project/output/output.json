@@ -1,0 +1,22 @@
+{"players": {
+  "player1": {
+    "score": 3,
+    "sponsor": "Melee Valencia",
+    "character": {
+      "color": "Vanilla",
+      "name": "Falco"
+    },
+    "flag": "es",
+    "name": "bazoo"
+  },
+  "player2": {
+    "score": 2,
+    "sponsor": "Melee Valencia",
+    "character": {
+      "color": "Vanilla",
+      "name": "Fox"
+    },
+    "flag": "tr",
+    "name": "Akif"
+  }
+}}

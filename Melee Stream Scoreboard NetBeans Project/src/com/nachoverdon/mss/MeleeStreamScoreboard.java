@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss;
 
+import com.nachoverdon.mss.model.Icons;
+import com.nachoverdon.mss.utils.FileUtils;
 import com.nachoverdon.mss.view.MainWindow;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +34,10 @@ public class MeleeStreamScoreboard {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(MeleeStreamScoreboard.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        FileUtils.init();
+        Icons.init();
+        
         new MainWindow();
     }
 

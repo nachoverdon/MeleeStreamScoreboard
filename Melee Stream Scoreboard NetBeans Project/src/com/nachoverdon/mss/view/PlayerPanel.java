@@ -13,6 +13,7 @@ import java.awt.Component;
 import java.util.Arrays;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
 import org.json.*;
@@ -27,14 +28,9 @@ public class PlayerPanel extends javax.swing.JPanel {
      */
     public PlayerPanel() {
         initComponents();
-        initNames();
-        initCharacters();
-        initSponsors();
-        initFlags();
+        initFields();
         
         comboBoxColor.setRenderer(new IconRenderer());
-        
-//        changeColorsComboBox();
     }
 
     /**
@@ -181,6 +177,13 @@ public class PlayerPanel extends javax.swing.JPanel {
         border.setTitle(title);
     }
     
+    private void initFields() {
+        initNames();
+        initCharacters();
+        initSponsors();
+        initFlags();
+    }
+    
     private void initNames() {
         comboBoxName.addItem("");
         
@@ -277,6 +280,28 @@ public class PlayerPanel extends javax.swing.JPanel {
             
             comboBoxColor.addItem(item);
         }
+    }
+    
+    public JSONObject getPlayerInfo() {
+        JSONObject json = new JSONObject();
+        
+        json.put("name", (String)comboBoxName.getSelectedItem());
+        json.put("score", spinnerScore.getValue());
+        
+        JSONObject character = new JSONObject();
+        character.put("name", getItemName(comboBoxCharacter));
+        character.put("color", getItemName(comboBoxColor));
+        
+        json.put("character", character);
+        json.put("sponsor", getItemName(comboBoxSponsor));
+        json.put("flag", (String)comboBoxFlag.getSelectedItem());
+        
+        return json;
+    }
+    
+    private String getItemName(JComboBox<IconItem> comboBox) {
+        IconItem item = (IconItem)comboBox.getSelectedItem();
+        return item.name;
     }
     
     private void comboBoxCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCharacterActionPerformed

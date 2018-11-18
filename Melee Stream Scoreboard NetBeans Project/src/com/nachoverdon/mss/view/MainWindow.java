@@ -5,12 +5,12 @@
  */
 package com.nachoverdon.mss.view;
 
-import com.nachoverdon.mss.model.Icons;
 import com.nachoverdon.mss.utils.FileUtils;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.UIManager;
+import org.json.JSONObject;
 
 /**
  *
@@ -22,8 +22,6 @@ public class MainWindow extends javax.swing.JFrame {
      * Creates new form MainWindow
      */
     public MainWindow() {
-        FileUtils.init();
-        Icons.init();
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -57,6 +55,11 @@ public class MainWindow extends javax.swing.JFrame {
         tabbedPane.addTab("Server", serverInfoPanel1);
 
         buttonUpdate.setText("Update");
+        buttonUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonUpdateActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         menuBar.add(jMenu1);
@@ -87,6 +90,14 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
+        JSONObject json = new JSONObject();
+        json.put("players", playersInfoPanel1.getPlayersInfo());
+        System.out.println("Saving...");
+        FileUtils.writeJSON("output/output.json", json);
+        System.out.println("Done.");
+    }//GEN-LAST:event_buttonUpdateActionPerformed
 
     /**
      * @param args the command line arguments

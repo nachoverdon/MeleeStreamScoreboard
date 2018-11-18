@@ -6,9 +6,14 @@
 package com.nachoverdon.mss.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -53,13 +58,27 @@ public class FileUtils {
                 
                 line = br.readLine();
             }
-            
+            br.close();
             result = sb.toString();
         } catch(Exception e) {
             e.printStackTrace();
         }
         
         return result;
+    }
+    
+    public static void writeFile(String path, String content) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(path));
+            bw.write(content);
+            bw.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void writeJSON(String path, JSONObject json) {
+        writeFile(path, json.toString(2));
     }
     
     public static String[] getNames() {        
