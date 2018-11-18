@@ -282,10 +282,10 @@ public class PlayerPanel extends javax.swing.JPanel {
         }
     }
     
-    public JSONObject getPlayerInfo() {
+    public JSONObject getInfo() {
         JSONObject json = new JSONObject();
         
-        json.put("name", (String)comboBoxName.getSelectedItem());
+        json.put("name", comboBoxName.getSelectedItem());
         json.put("score", spinnerScore.getValue());
         
         JSONObject character = new JSONObject();
@@ -294,7 +294,7 @@ public class PlayerPanel extends javax.swing.JPanel {
         
         json.put("character", character);
         json.put("sponsor", getItemName(comboBoxSponsor));
-        json.put("flag", (String)comboBoxFlag.getSelectedItem());
+        json.put("flag", comboBoxFlag.getSelectedItem());
         
         return json;
     }

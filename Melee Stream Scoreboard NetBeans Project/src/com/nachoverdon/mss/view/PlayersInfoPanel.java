@@ -170,15 +170,15 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         }
     }
     
-    public JSONObject getPlayersInfo() {
+    public JSONObject getInfo() {
         JSONObject json = new JSONObject();
         
-        json.put("player1", panelPlayer1.getPlayerInfo());
-        json.put("player2", panelPlayer2.getPlayerInfo());
+        json.put("player1", panelPlayer1.getInfo());
+        json.put("player2", panelPlayer2.getInfo());
         
         if (isTeams()) {
-            json.put("player3", panelPlayer3.getPlayerInfo());
-            json.put("player4", panelPlayer4.getPlayerInfo());
+            json.put("player3", panelPlayer3.getInfo());
+            json.put("player4", panelPlayer4.getInfo());
         }
         
         return json;

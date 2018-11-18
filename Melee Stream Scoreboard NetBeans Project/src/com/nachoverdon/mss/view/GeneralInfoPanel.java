@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss.view;
 
+import org.json.JSONObject;
+
 /**
  *
  * @author Nacho Verdón Blázquez
@@ -307,6 +309,21 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxWebsiteActionPerformed
 
+    public JSONObject getInfo() {
+        JSONObject json = new JSONObject();
+        
+        json.put("round", comboBoxRound.getSelectedItem());
+        json.put("tournament", comboBoxTournamentName.getSelectedItem());
+        json.put("website", comboBoxWebsite.getSelectedItem());
+        json.put("bracket", comboBoxBracket.getSelectedItem());
+        json.put("caster1", comboBoxCaster1.getSelectedItem());
+        json.put("caster2", comboBoxCaster2.getSelectedItem());
+        json.put("player1", comboBoxPlayerCam1.getSelectedItem());
+        json.put("player2", comboBoxPlayerCam2.getSelectedItem());
+        json.put("player3", comboBoxPlayerCam3.getSelectedItem());
+        json.put("player4", comboBoxPlayerCam4.getSelectedItem());
+        return json;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSend;

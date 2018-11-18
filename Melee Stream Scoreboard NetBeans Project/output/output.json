@@ -1,22 +1,36 @@
-{"players": {
-  "player1": {
-    "score": 3,
-    "sponsor": "Melee Valencia",
-    "character": {
-      "color": "Vanilla",
-      "name": "Falco"
-    },
-    "flag": "es",
-    "name": "bazoo"
+{
+  "general": {
+    "website": "website",
+    "round": "round",
+    "player1": "cam1",
+    "player2": "cam2",
+    "player3": "cam3",
+    "player4": "cam4",
+    "bracket": "bracket",
+    "tournament": "tournament",
+    "caster1": "caster1",
+    "caster2": "caster2"
   },
-  "player2": {
-    "score": 2,
-    "sponsor": "Melee Valencia",
-    "character": {
-      "color": "Vanilla",
-      "name": "Fox"
+  "players": {
+    "player1": {
+      "score": 0,
+      "sponsor": "No sponsor",
+      "character": {
+        "color": "Vanilla",
+        "name": "Bowser"
+      },
+      "flag": "ad",
+      "name": ""
     },
-    "flag": "tr",
-    "name": "Akif"
+    "player2": {
+      "score": 0,
+      "sponsor": "No sponsor",
+      "character": {
+        "color": "Vanilla",
+        "name": "Bowser"
+      },
+      "flag": "ad",
+      "name": ""
+    }
   }
-}}
+}

@@ -93,7 +93,8 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         JSONObject json = new JSONObject();
-        json.put("players", playersInfoPanel1.getPlayersInfo());
+        json.put("players", playersInfoPanel1.getInfo());
+        json.put("general", generalInfoPanel1.getInfo());
         System.out.println("Saving...");
         FileUtils.writeJSON("output/output.json", json);
         System.out.println("Done.");
