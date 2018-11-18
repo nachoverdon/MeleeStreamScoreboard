@@ -40,6 +40,7 @@ public class MainWindow extends javax.swing.JFrame {
         tabbedPane = new javax.swing.JTabbedPane();
         playersInfoPanel1 = new com.nachoverdon.mss.view.PlayersInfoPanel();
         generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
+        crewBattlePanel1 = new com.nachoverdon.mss.view.CrewBattlePanel();
         serverInfoPanel1 = new com.nachoverdon.mss.view.ServerInfoPanel();
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
@@ -52,6 +53,7 @@ public class MainWindow extends javax.swing.JFrame {
 
         tabbedPane.addTab("Players", playersInfoPanel1);
         tabbedPane.addTab("General", generalInfoPanel1);
+        tabbedPane.addTab("Crews", crewBattlePanel1);
         tabbedPane.addTab("Server", serverInfoPanel1);
 
         buttonUpdate.setText("Update");
@@ -148,6 +150,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonUpdate;
+    private com.nachoverdon.mss.view.CrewBattlePanel crewBattlePanel1;
     private com.nachoverdon.mss.view.GeneralInfoPanel generalInfoPanel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

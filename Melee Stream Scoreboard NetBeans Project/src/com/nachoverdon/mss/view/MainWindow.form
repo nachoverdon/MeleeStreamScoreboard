@@ -84,6 +84,15 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Component class="com.nachoverdon.mss.view.CrewBattlePanel" name="crewBattlePanel1">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Crews">
+                <Property name="tabTitle" type="java.lang.String" value="Crews"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+        </Component>
         <Component class="com.nachoverdon.mss.view.ServerInfoPanel" name="serverInfoPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
