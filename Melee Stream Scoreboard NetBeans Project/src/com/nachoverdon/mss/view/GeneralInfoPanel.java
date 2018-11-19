@@ -20,9 +20,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
      */
     public GeneralInfoPanel() {
         initComponents();
-        initRounds();
-        initCasters();
-        initPlayerCam();
+//        initRounds();
+//        initCasters();
+//        initPlayerCam();
         enableAutocompletion();
     }
 

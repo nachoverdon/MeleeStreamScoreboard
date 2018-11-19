@@ -53,10 +53,8 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         buttonSwap2And4 = new javax.swing.JButton();
         buttonSwap3And4 = new javax.swing.JButton();
 
-        setMaximumSize(new java.awt.Dimension(550, 400));
-        setMinimumSize(new java.awt.Dimension(550, 400));
-        setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(550, 400));
+        setMinimumSize(new java.awt.Dimension(575, 403));
+        setPreferredSize(new java.awt.Dimension(575, 403));
 
         panelPlayer3.setEnabled(false);
 
@@ -119,7 +117,8 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
                         .addComponent(buttonSwap3And4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panelPlayer4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonSwap2And4)))))
+                            .addComponent(buttonSwap2And4))))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

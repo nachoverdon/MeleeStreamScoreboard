@@ -9,6 +9,7 @@ import com.nachoverdon.mss.utils.FileUtils;
 import java.awt.Image;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import org.json.JSONObject;
 
@@ -46,11 +47,13 @@ public class MainWindow extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Melee Stream Scoreboard");
-        setResizable(false);
 
+        tabbedPane.setMinimumSize(new java.awt.Dimension(625, 480));
+        tabbedPane.setPreferredSize(new java.awt.Dimension(625, 480));
         tabbedPane.addTab("Players", playersInfoPanel1);
         tabbedPane.addTab("General", generalInfoPanel1);
         tabbedPane.addTab("Crews", crewBattlePanel1);
@@ -69,13 +72,21 @@ public class MainWindow extends javax.swing.JFrame {
         jMenu2.setText("Edit");
         menuBar.add(jMenu2);
 
+        jMenu3.setText("Credits");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
+        menuBar.add(jMenu3);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(buttonUpdate)
@@ -102,6 +113,19 @@ public class MainWindow extends javax.swing.JFrame {
         FileUtils.writeJSON("output/output.json", json);
         System.out.println("Done.");
     }//GEN-LAST:event_buttonUpdateActionPerformed
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        ImageIcon icon = new ImageIcon("img/icons/mss_logo_128.png");
+        String msg = "Melee Stream Scoreboard \n"
+            + "Author: Nacho 'bazoo' Verdón \n"
+            + "https://github.com/nachoverdon/MeleeStreamScoreboard";
+        JOptionPane.showMessageDialog(
+                null,
+                msg,
+                "Credits", JOptionPane.INFORMATION_MESSAGE,
+                icon
+        );
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,6 +179,7 @@ public class MainWindow extends javax.swing.JFrame {
     private com.nachoverdon.mss.view.GeneralInfoPanel generalInfoPanel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar menuBar;
     private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel1;
     private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel1;
