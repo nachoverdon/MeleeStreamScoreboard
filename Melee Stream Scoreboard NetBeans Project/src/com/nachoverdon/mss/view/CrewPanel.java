@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss.view;
 
+import javax.swing.border.TitledBorder;
+
 /**
  *
  * @author bazoo
@@ -27,86 +29,346 @@ public class CrewPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelName = new javax.swing.JLabel();
+        labelStocks = new javax.swing.JLabel();
         comboBoxName = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        stocks = new javax.swing.JSpinner();
+        jScrollPane = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        comboBoxName2 = new javax.swing.JComboBox<>();
+        labelPlayersName = new javax.swing.JLabel();
+        labelPlayerCharacter = new javax.swing.JLabel();
+        labalPlayerStocksTaken = new javax.swing.JLabel();
+        name1 = new javax.swing.JComboBox<>();
+        character1 = new javax.swing.JComboBox<>();
+        stocksTaken1 = new javax.swing.JSpinner();
+        name2 = new javax.swing.JComboBox<>();
+        character2 = new javax.swing.JComboBox<>();
+        stocksTaken2 = new javax.swing.JSpinner();
+        name3 = new javax.swing.JComboBox<>();
+        character3 = new javax.swing.JComboBox<>();
+        stocksTaken3 = new javax.swing.JSpinner();
+        name4 = new javax.swing.JComboBox<>();
+        character4 = new javax.swing.JComboBox<>();
+        stocksTaken4 = new javax.swing.JSpinner();
+        name5 = new javax.swing.JComboBox<>();
+        character5 = new javax.swing.JComboBox<>();
+        stocksTaken5 = new javax.swing.JSpinner();
+        name6 = new javax.swing.JComboBox<>();
+        character6 = new javax.swing.JComboBox<>();
+        stocksTaken6 = new javax.swing.JSpinner();
+        name7 = new javax.swing.JComboBox<>();
+        character7 = new javax.swing.JComboBox<>();
+        stocksTaken7 = new javax.swing.JSpinner();
+        name8 = new javax.swing.JComboBox<>();
+        character8 = new javax.swing.JComboBox<>();
+        stocksTaken8 = new javax.swing.JSpinner();
+        name9 = new javax.swing.JComboBox<>();
+        character9 = new javax.swing.JComboBox<>();
+        stocksTaken9 = new javax.swing.JSpinner();
+        name10 = new javax.swing.JComboBox<>();
+        character10 = new javax.swing.JComboBox<>();
+        stocksTaken10 = new javax.swing.JSpinner();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Crew", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Crew", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
 
-        jLabel1.setText("Name");
+        labelName.setText("Name");
+
+        labelStocks.setText("Stocks");
 
         comboBoxName.setEditable(true);
         comboBoxName.setMaximumSize(new java.awt.Dimension(128, 26));
 
-        jLabel2.setText("Stocks");
+        jScrollPane.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
 
-        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Players"));
+        labelPlayersName.setText("Name");
 
-        comboBoxName2.setEditable(true);
-        comboBoxName2.setToolTipText("Player");
-        comboBoxName2.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxName2.setName("Player"); // NOI18N
+        labelPlayerCharacter.setText("Character");
+
+        labalPlayerStocksTaken.setText("Stocks Taken");
+
+        name1.setEditable(true);
+        name1.setToolTipText("Player");
+        name1.setMaximumSize(new java.awt.Dimension(128, 26));
+        name1.setName("Player"); // NOI18N
+
+        character1.setEditable(true);
+        character1.setToolTipText("Player");
+        character1.setMaximumSize(new java.awt.Dimension(128, 26));
+        character1.setName("Player"); // NOI18N
+
+        name2.setEditable(true);
+        name2.setToolTipText("Player");
+        name2.setMaximumSize(new java.awt.Dimension(128, 26));
+        name2.setName("Player"); // NOI18N
+
+        character2.setEditable(true);
+        character2.setToolTipText("Player");
+        character2.setMaximumSize(new java.awt.Dimension(128, 26));
+        character2.setName("Player"); // NOI18N
+
+        name3.setEditable(true);
+        name3.setToolTipText("Player");
+        name3.setMaximumSize(new java.awt.Dimension(128, 26));
+        name3.setName("Player"); // NOI18N
+
+        character3.setEditable(true);
+        character3.setToolTipText("Player");
+        character3.setMaximumSize(new java.awt.Dimension(128, 26));
+        character3.setName("Player"); // NOI18N
+
+        name4.setEditable(true);
+        name4.setToolTipText("Player");
+        name4.setMaximumSize(new java.awt.Dimension(128, 26));
+        name4.setName("Player"); // NOI18N
+
+        character4.setEditable(true);
+        character4.setToolTipText("Player");
+        character4.setMaximumSize(new java.awt.Dimension(128, 26));
+        character4.setName("Player"); // NOI18N
+
+        name5.setEditable(true);
+        name5.setToolTipText("Player");
+        name5.setMaximumSize(new java.awt.Dimension(128, 26));
+        name5.setName("Player"); // NOI18N
+
+        character5.setEditable(true);
+        character5.setToolTipText("Player");
+        character5.setMaximumSize(new java.awt.Dimension(128, 26));
+        character5.setName("Player"); // NOI18N
+
+        name6.setEditable(true);
+        name6.setToolTipText("Player");
+        name6.setMaximumSize(new java.awt.Dimension(128, 26));
+        name6.setName("Player"); // NOI18N
+
+        character6.setEditable(true);
+        character6.setToolTipText("Player");
+        character6.setMaximumSize(new java.awt.Dimension(128, 26));
+        character6.setName("Player"); // NOI18N
+
+        name7.setEditable(true);
+        name7.setToolTipText("Player");
+        name7.setMaximumSize(new java.awt.Dimension(128, 26));
+        name7.setName("Player"); // NOI18N
+
+        character7.setEditable(true);
+        character7.setToolTipText("Player");
+        character7.setMaximumSize(new java.awt.Dimension(128, 26));
+        character7.setName("Player"); // NOI18N
+
+        name8.setEditable(true);
+        name8.setToolTipText("Player");
+        name8.setMaximumSize(new java.awt.Dimension(128, 26));
+        name8.setName("Player"); // NOI18N
+
+        character8.setEditable(true);
+        character8.setToolTipText("Player");
+        character8.setMaximumSize(new java.awt.Dimension(128, 26));
+        character8.setName("Player"); // NOI18N
+
+        name9.setEditable(true);
+        name9.setToolTipText("Player");
+        name9.setMaximumSize(new java.awt.Dimension(128, 26));
+        name9.setName("Player"); // NOI18N
+
+        character9.setEditable(true);
+        character9.setToolTipText("Player");
+        character9.setMaximumSize(new java.awt.Dimension(128, 26));
+        character9.setName("Player"); // NOI18N
+
+        name10.setEditable(true);
+        name10.setToolTipText("Player");
+        name10.setMaximumSize(new java.awt.Dimension(128, 26));
+        name10.setName("Player"); // NOI18N
+
+        character10.setEditable(true);
+        character10.setToolTipText("Player");
+        character10.setMaximumSize(new java.awt.Dimension(128, 26));
+        character10.setName("Player"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(comboBoxName2, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 118, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(name1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelPlayersName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name2, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name3, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name4, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name5, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name6, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name7, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name8, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name9, 0, 148, Short.MAX_VALUE)
+                    .addComponent(name10, 0, 148, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(character1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPlayerCharacter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(character2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(stocksTaken1)
+                    .addComponent(labalPlayerStocksTaken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stocksTaken2)
+                    .addComponent(stocksTaken3)
+                    .addComponent(stocksTaken4)
+                    .addComponent(stocksTaken5)
+                    .addComponent(stocksTaken6)
+                    .addComponent(stocksTaken7)
+                    .addComponent(stocksTaken8)
+                    .addComponent(stocksTaken9)
+                    .addComponent(stocksTaken10))
+                .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(comboBoxName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 258, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPlayersName)
+                    .addComponent(labelPlayerCharacter)
+                    .addComponent(labalPlayerStocksTaken))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(name10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(character10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stocksTaken10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        comboBoxName2.setSelectedItem("Player");
-
-        jScrollPane1.setViewportView(jPanel1);
+        jScrollPane.setViewportView(jPanel1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBoxName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comboBoxName, 0, 220, Short.MAX_VALUE)
+                    .addComponent(labelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSpinner1)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
-            .addComponent(jScrollPane1)
+                    .addComponent(labelStocks, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+                    .addComponent(stocks))
+                .addGap(0, 0, 0))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(labelName)
+                    .addComponent(labelStocks))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stocks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1))
+                .addComponent(jScrollPane))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
+    public void setBorderTitle(String title) {
+        TitledBorder border = (TitledBorder)getBorder();
+        border.setTitle(title);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> character1;
+    private javax.swing.JComboBox<String> character10;
+    private javax.swing.JComboBox<String> character2;
+    private javax.swing.JComboBox<String> character3;
+    private javax.swing.JComboBox<String> character4;
+    private javax.swing.JComboBox<String> character5;
+    private javax.swing.JComboBox<String> character6;
+    private javax.swing.JComboBox<String> character7;
+    private javax.swing.JComboBox<String> character8;
+    private javax.swing.JComboBox<String> character9;
     private javax.swing.JComboBox<String> comboBoxName;
-    private javax.swing.JComboBox<String> comboBoxName2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JLabel labalPlayerStocksTaken;
+    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelPlayerCharacter;
+    private javax.swing.JLabel labelPlayersName;
+    private javax.swing.JLabel labelStocks;
+    private javax.swing.JComboBox<String> name1;
+    private javax.swing.JComboBox<String> name10;
+    private javax.swing.JComboBox<String> name2;
+    private javax.swing.JComboBox<String> name3;
+    private javax.swing.JComboBox<String> name4;
+    private javax.swing.JComboBox<String> name5;
+    private javax.swing.JComboBox<String> name6;
+    private javax.swing.JComboBox<String> name7;
+    private javax.swing.JComboBox<String> name8;
+    private javax.swing.JComboBox<String> name9;
+    private javax.swing.JSpinner stocks;
+    private javax.swing.JSpinner stocksTaken1;
+    private javax.swing.JSpinner stocksTaken10;
+    private javax.swing.JSpinner stocksTaken2;
+    private javax.swing.JSpinner stocksTaken3;
+    private javax.swing.JSpinner stocksTaken4;
+    private javax.swing.JSpinner stocksTaken5;
+    private javax.swing.JSpinner stocksTaken6;
+    private javax.swing.JSpinner stocksTaken7;
+    private javax.swing.JSpinner stocksTaken8;
+    private javax.swing.JSpinner stocksTaken9;
     // End of variables declaration//GEN-END:variables
 }

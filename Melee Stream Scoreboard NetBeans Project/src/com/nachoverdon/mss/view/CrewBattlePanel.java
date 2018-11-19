@@ -16,6 +16,8 @@ public class CrewBattlePanel extends javax.swing.JPanel {
      */
     public CrewBattlePanel() {
         initComponents();
+        crewPanel1.setBorderTitle("Crew 1");
+        crewPanel2.setBorderTitle("Crew 2");
     }
 
     /**
