@@ -28,7 +28,7 @@ public class PlayerPanel extends javax.swing.JPanel {
      */
     public PlayerPanel() {
         initComponents();
-//        initFields();
+        initFields();
         
         comboBoxColor.setRenderer(new IconRenderer());
     }

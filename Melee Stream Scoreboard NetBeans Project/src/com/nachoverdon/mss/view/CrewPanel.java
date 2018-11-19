@@ -42,7 +42,7 @@ public class CrewPanel extends javax.swing.JPanel {
             new CrewMember(name9, character9, stocksTaken9),
             new CrewMember(name10, character10, stocksTaken10)
         };
-//        initCrewPlayers();
+        initCrewPlayers();
         
     }
 
