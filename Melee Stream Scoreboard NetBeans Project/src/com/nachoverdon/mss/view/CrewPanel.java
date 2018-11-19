@@ -5,19 +5,45 @@
  */
 package com.nachoverdon.mss.view;
 
+import com.nachoverdon.mss.model.IconItem;
+import com.nachoverdon.mss.model.Icons;
+import com.nachoverdon.mss.utils.AutoCompletion;
+import com.nachoverdon.mss.utils.FileUtils;
+import java.awt.Component;
+import java.util.Arrays;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JSpinner;
 import javax.swing.border.TitledBorder;
+import org.json.JSONObject;
 
 /**
  *
  * @author bazoo
  */
 public class CrewPanel extends javax.swing.JPanel {
-
+    private CrewMember[] players;
+    
     /**
      * Creates new form CrewPanel
      */
     public CrewPanel() {
         initComponents();
+        players = new CrewMember[]{
+            new CrewMember(name1, character1, stocksTaken1),
+            new CrewMember(name2, character2, stocksTaken2),
+            new CrewMember(name3, character3, stocksTaken3),
+            new CrewMember(name4, character4, stocksTaken4),
+            new CrewMember(name5, character5, stocksTaken5),
+            new CrewMember(name6, character6, stocksTaken6),
+            new CrewMember(name7, character7, stocksTaken7),
+            new CrewMember(name8, character8, stocksTaken8),
+            new CrewMember(name9, character9, stocksTaken9),
+            new CrewMember(name10, character10, stocksTaken10)
+        };
+        initCrewPlayers();
+        
     }
 
     /**
@@ -87,135 +113,86 @@ public class CrewPanel extends javax.swing.JPanel {
         labalPlayerStocksTaken.setText("Stocks Taken");
 
         name1.setEditable(true);
-        name1.setToolTipText("Player");
         name1.setMaximumSize(new java.awt.Dimension(128, 26));
-        name1.setName("Player"); // NOI18N
 
-        character1.setEditable(true);
-        character1.setToolTipText("Player");
         character1.setMaximumSize(new java.awt.Dimension(128, 26));
-        character1.setName("Player"); // NOI18N
 
         name2.setEditable(true);
-        name2.setToolTipText("Player");
         name2.setMaximumSize(new java.awt.Dimension(128, 26));
-        name2.setName("Player"); // NOI18N
 
-        character2.setEditable(true);
-        character2.setToolTipText("Player");
         character2.setMaximumSize(new java.awt.Dimension(128, 26));
-        character2.setName("Player"); // NOI18N
 
         name3.setEditable(true);
-        name3.setToolTipText("Player");
         name3.setMaximumSize(new java.awt.Dimension(128, 26));
-        name3.setName("Player"); // NOI18N
 
-        character3.setEditable(true);
-        character3.setToolTipText("Player");
         character3.setMaximumSize(new java.awt.Dimension(128, 26));
-        character3.setName("Player"); // NOI18N
 
         name4.setEditable(true);
-        name4.setToolTipText("Player");
         name4.setMaximumSize(new java.awt.Dimension(128, 26));
-        name4.setName("Player"); // NOI18N
 
-        character4.setEditable(true);
-        character4.setToolTipText("Player");
         character4.setMaximumSize(new java.awt.Dimension(128, 26));
-        character4.setName("Player"); // NOI18N
 
         name5.setEditable(true);
-        name5.setToolTipText("Player");
         name5.setMaximumSize(new java.awt.Dimension(128, 26));
-        name5.setName("Player"); // NOI18N
 
-        character5.setEditable(true);
-        character5.setToolTipText("Player");
         character5.setMaximumSize(new java.awt.Dimension(128, 26));
-        character5.setName("Player"); // NOI18N
 
         name6.setEditable(true);
-        name6.setToolTipText("Player");
         name6.setMaximumSize(new java.awt.Dimension(128, 26));
-        name6.setName("Player"); // NOI18N
 
-        character6.setEditable(true);
-        character6.setToolTipText("Player");
         character6.setMaximumSize(new java.awt.Dimension(128, 26));
-        character6.setName("Player"); // NOI18N
 
         name7.setEditable(true);
-        name7.setToolTipText("Player");
         name7.setMaximumSize(new java.awt.Dimension(128, 26));
-        name7.setName("Player"); // NOI18N
 
-        character7.setEditable(true);
-        character7.setToolTipText("Player");
         character7.setMaximumSize(new java.awt.Dimension(128, 26));
-        character7.setName("Player"); // NOI18N
 
         name8.setEditable(true);
-        name8.setToolTipText("Player");
         name8.setMaximumSize(new java.awt.Dimension(128, 26));
-        name8.setName("Player"); // NOI18N
 
-        character8.setEditable(true);
-        character8.setToolTipText("Player");
         character8.setMaximumSize(new java.awt.Dimension(128, 26));
-        character8.setName("Player"); // NOI18N
 
         name9.setEditable(true);
-        name9.setToolTipText("Player");
         name9.setMaximumSize(new java.awt.Dimension(128, 26));
-        name9.setName("Player"); // NOI18N
 
-        character9.setEditable(true);
-        character9.setToolTipText("Player");
         character9.setMaximumSize(new java.awt.Dimension(128, 26));
-        character9.setName("Player"); // NOI18N
 
         name10.setEditable(true);
-        name10.setToolTipText("Player");
         name10.setMaximumSize(new java.awt.Dimension(128, 26));
-        name10.setName("Player"); // NOI18N
 
-        character10.setEditable(true);
-        character10.setToolTipText("Player");
         character10.setMaximumSize(new java.awt.Dimension(128, 26));
-        character10.setName("Player"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(name3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name7, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name8, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name9, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(name10, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(labelPlayersName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(name1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelPlayersName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(name2, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name3, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name4, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name5, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name6, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name7, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name8, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name9, 0, 148, Short.MAX_VALUE)
-                    .addComponent(name10, 0, 148, Short.MAX_VALUE))
+                    .addComponent(name2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(character1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPlayerCharacter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(character2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(character10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(character10, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character9, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character8, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character7, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character6, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character5, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character4, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character3, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character2, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(character1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelPlayerCharacter))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(stocksTaken1)
@@ -304,11 +281,8 @@ public class CrewPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(labelStocks, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(stocks))
-                .addGap(0, 0, 0))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane)
-                .addGap(0, 0, 0))
+                    .addComponent(stocks)))
+            .addComponent(jScrollPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,22 +299,93 @@ public class CrewPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initCrewPlayers() {
+        JSONObject charJson = FileUtils.getCharacters();
+
+        String[] characters = new String[]{};
+        characters = charJson.keySet().toArray(characters);
+        Arrays.sort(characters);
+        
+        String[] names = FileUtils.getNames();
+        
+        for (CrewMember player: players) {
+            player.character.removeAllItems();
+            player.character.setRenderer(new IconRendererNoText());
+            AutoCompletion.enable(player.name);
+
+            player.name.addItem("");
+            for (String name: names) {
+                player.name.addItem(name);
+            }
+            
+            for (String character: characters) {
+
+                IconItem item = new IconItem(
+                    character,
+                    Icons.getColors().get(character + "Vanilla")
+                );
+
+                player.character.addItem(item);
+            }
+        }
+    }
+    
     public void setBorderTitle(String title) {
         TitledBorder border = (TitledBorder)getBorder();
         border.setTitle(title);
     }
     
+    public JSONObject getInfo() {
+        JSONObject json = new JSONObject();
+        
+        String name = (String) comboBoxName.getSelectedItem();
+        
+        if (name == null || name.equals("")) return json;
+        
+        json.put("name", name);
+        json.put("stocks", stocks.getValue());
+        
+
+        
+        for (int i = 0; i < players.length; i++) {
+            CrewMember p = players[i];
+            if (p.name.getSelectedItem().equals("")) {
+                continue;
+            }
+            json.put("player" + (i + 1), getPlayerInfo(p.name, p.character, p.stocksTaken));
+        }
+
+        
+        return json;
+    }
+    
+    private String getItemName(JComboBox<IconItem> comboBox) {
+        IconItem item = (IconItem)comboBox.getSelectedItem();
+        return item.name;
+    }
+    
+    private JSONObject getPlayerInfo(JComboBox<String> name, 
+        JComboBox<IconItem> character, JSpinner stocksTaken) {
+        JSONObject json = new JSONObject();
+        
+        json.put("name", name.getSelectedItem());
+        json.put("character", getItemName(character));
+        json.put("stocksTaken", stocksTaken.getValue());
+        
+        return json;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> character1;
-    private javax.swing.JComboBox<String> character10;
-    private javax.swing.JComboBox<String> character2;
-    private javax.swing.JComboBox<String> character3;
-    private javax.swing.JComboBox<String> character4;
-    private javax.swing.JComboBox<String> character5;
-    private javax.swing.JComboBox<String> character6;
-    private javax.swing.JComboBox<String> character7;
-    private javax.swing.JComboBox<String> character8;
-    private javax.swing.JComboBox<String> character9;
+    private javax.swing.JComboBox<IconItem> character1;
+    private javax.swing.JComboBox<IconItem> character10;
+    private javax.swing.JComboBox<IconItem> character2;
+    private javax.swing.JComboBox<IconItem> character3;
+    private javax.swing.JComboBox<IconItem> character4;
+    private javax.swing.JComboBox<IconItem> character5;
+    private javax.swing.JComboBox<IconItem> character6;
+    private javax.swing.JComboBox<IconItem> character7;
+    private javax.swing.JComboBox<IconItem> character8;
+    private javax.swing.JComboBox<IconItem> character9;
     private javax.swing.JComboBox<String> comboBoxName;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane;
@@ -371,4 +416,34 @@ public class CrewPanel extends javax.swing.JPanel {
     private javax.swing.JSpinner stocksTaken8;
     private javax.swing.JSpinner stocksTaken9;
     // End of variables declaration//GEN-END:variables
+}
+
+class IconRendererNoText extends DefaultListCellRenderer {    
+    @Override
+    public Component getListCellRendererComponent(JList<?> list, Object value,
+            int index, boolean isSelected, boolean cellHasFocus) {
+        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        
+        IconItem item = (IconItem) value;
+        
+        if (item == null) return this;
+        
+        this.setText("");
+        this.setIcon(item.icon);
+        
+        return this;
+    }
+}
+
+class CrewMember {
+    public JComboBox<String> name;
+    public JComboBox<IconItem> character;
+    public JSpinner stocksTaken;
+    
+    public CrewMember(JComboBox<String> name, JComboBox<IconItem> character,
+        JSpinner stocksTaken) {
+        this.name = name;
+        this.character = character;
+        this.stocksTaken = stocksTaken;
+    }
 }

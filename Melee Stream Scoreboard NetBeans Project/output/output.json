@@ -1,5 +1,14 @@
 {
-  "general": {"bestof": 0},
+  "general": {
+    "round": "",
+    "player1": "",
+    "player2": "",
+    "player3": "",
+    "player4": "",
+    "bestof": 0,
+    "caster1": "",
+    "caster2": ""
+  },
   "players": {
     "player1": {
       "score": 0,
@@ -21,5 +30,9 @@
       "flag": "ad",
       "name": ""
     }
+  },
+  "crews": {
+    "crew1": {},
+    "crew2": {}
   }
 }

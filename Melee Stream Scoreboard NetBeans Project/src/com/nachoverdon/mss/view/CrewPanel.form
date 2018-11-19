@@ -38,12 +38,8 @@
                   <Component id="labelStocks" pref="64" max="32767" attributes="0"/>
                   <Component id="stocks" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane" max="32767" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-          </Group>
+          <Component id="jScrollPane" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -109,32 +105,34 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="name1" max="32767" attributes="0"/>
-                          <Component id="labelPlayersName" max="32767" attributes="0"/>
-                          <Component id="name2" pref="148" max="32767" attributes="0"/>
-                          <Component id="name3" pref="148" max="32767" attributes="0"/>
-                          <Component id="name4" pref="148" max="32767" attributes="0"/>
-                          <Component id="name5" pref="148" max="32767" attributes="0"/>
-                          <Component id="name6" pref="148" max="32767" attributes="0"/>
-                          <Component id="name7" pref="148" max="32767" attributes="0"/>
-                          <Component id="name8" pref="148" max="32767" attributes="0"/>
-                          <Component id="name9" pref="148" max="32767" attributes="0"/>
-                          <Component id="name10" pref="148" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="name3" max="32767" attributes="0"/>
+                          <Component id="name4" max="32767" attributes="0"/>
+                          <Component id="name5" max="32767" attributes="0"/>
+                          <Component id="name6" max="32767" attributes="0"/>
+                          <Component id="name7" max="32767" attributes="0"/>
+                          <Component id="name8" max="32767" attributes="0"/>
+                          <Component id="name9" max="32767" attributes="0"/>
+                          <Component id="name10" max="32767" attributes="0"/>
+                          <Component id="labelPlayersName" min="-2" pref="160" max="-2" attributes="0"/>
+                          <Component id="name1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="name2" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="character1" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="labelPlayerCharacter" max="32767" attributes="0"/>
-                          <Component id="character2" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character4" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character5" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character6" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character7" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character8" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character9" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="character10" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="character10" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character9" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character8" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character7" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character6" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character5" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character4" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character3" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character2" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="character1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="labelPlayerCharacter" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -246,11 +244,11 @@
             <Component class="javax.swing.JComboBox" name="name1">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -258,15 +256,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character1">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken1">
@@ -274,28 +271,26 @@
             <Component class="javax.swing.JComboBox" name="name2">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="character2">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken2">
@@ -303,11 +298,11 @@
             <Component class="javax.swing.JComboBox" name="name3">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -315,15 +310,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character3">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken3">
@@ -331,11 +325,11 @@
             <Component class="javax.swing.JComboBox" name="name4">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -343,15 +337,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character4">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken4">
@@ -359,11 +352,11 @@
             <Component class="javax.swing.JComboBox" name="name5">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -371,15 +364,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character5">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken5">
@@ -387,11 +379,11 @@
             <Component class="javax.swing.JComboBox" name="name6">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -399,15 +391,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character6">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken6">
@@ -415,11 +406,11 @@
             <Component class="javax.swing.JComboBox" name="name7">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -427,16 +418,14 @@
             </Component>
             <Component class="javax.swing.JComboBox" name="character7">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken7">
@@ -444,29 +433,26 @@
             <Component class="javax.swing.JComboBox" name="name8">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="character8">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken8">
@@ -474,29 +460,26 @@
             <Component class="javax.swing.JComboBox" name="name9">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="character9">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken9">
@@ -504,29 +487,26 @@
             <Component class="javax.swing.JComboBox" name="name10">
               <Properties>
                 <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JComboBox" name="character10">
               <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value="Player"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[128, 26]"/>
                 </Property>
-                <Property name="name" type="java.lang.String" value="Player" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="name1.setSelectedItem(&quot;Player&quot;);"/>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
               </AuxValues>
             </Component>
             <Component class="javax.swing.JSpinner" name="stocksTaken10">

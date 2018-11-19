@@ -5,6 +5,8 @@
  */
 package com.nachoverdon.mss.view;
 
+import org.json.JSONObject;
+
 /**
  *
  * @author bazoo
@@ -48,6 +50,14 @@ public class CrewBattlePanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JSONObject getInfo() {
+        JSONObject json = new JSONObject();
+        
+        json.put("crew1", crewPanel1.getInfo());
+        json.put("crew2", crewPanel2.getInfo());
+        
+        return json;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.nachoverdon.mss.view.CrewPanel crewPanel1;

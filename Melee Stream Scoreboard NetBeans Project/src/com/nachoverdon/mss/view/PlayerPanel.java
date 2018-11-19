@@ -5,17 +5,16 @@
  */
 package com.nachoverdon.mss.view;
 
+import com.nachoverdon.mss.model.FlagRenderer;
 import com.nachoverdon.mss.model.IconItem;
+import com.nachoverdon.mss.model.IconRenderer;
 import com.nachoverdon.mss.model.Icons;
 import com.nachoverdon.mss.utils.AutoCompletion;
 import com.nachoverdon.mss.utils.FileUtils;
 
-import java.awt.Component;
 import java.util.Arrays;
-import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
-import javax.swing.JList;
 import javax.swing.border.TitledBorder;
 import org.json.*;
 /**
@@ -325,34 +324,4 @@ public class PlayerPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelSponsor;
     private javax.swing.JSpinner spinnerScore;
     // End of variables declaration//GEN-END:variables
-}
-
-class IconRenderer extends DefaultListCellRenderer {    
-    @Override
-    public Component getListCellRendererComponent(JList<?> list, Object value,
-            int index, boolean isSelected, boolean cellHasFocus) {
-        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        
-        IconItem item = (IconItem) value;
-        
-        if (item == null) return this;
-        
-        this.setText(item.name);
-        this.setIcon(item.icon);
-        
-        return this;
-    }
-}
-class FlagRenderer extends DefaultListCellRenderer {    
-    @Override
-    public Component getListCellRendererComponent(JList<?> list, Object value,
-            int index, boolean isSelected, boolean cellHasFocus) {
-        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        
-        String name = (String) value;
-        this.setText(name.toUpperCase());
-        this.setIcon(Icons.getFlags().get(name));
-        
-        return this;
-    }
 }
