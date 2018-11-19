@@ -39,25 +39,25 @@ public class MainWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         tabbedPane = new javax.swing.JTabbedPane();
-        playersInfoPanel1 = new com.nachoverdon.mss.view.PlayersInfoPanel();
-        generalInfoPanel1 = new com.nachoverdon.mss.view.GeneralInfoPanel();
-        crewBattlePanel1 = new com.nachoverdon.mss.view.CrewBattlePanel();
-        serverInfoPanel1 = new com.nachoverdon.mss.view.ServerInfoPanel();
+        playersInfoPanel = new com.nachoverdon.mss.view.PlayersInfoPanel();
+        generalInfoPanel = new com.nachoverdon.mss.view.GeneralInfoPanel();
+        crewBattlePanel = new com.nachoverdon.mss.view.CrewBattlePanel();
+        serverInfoPanel = new com.nachoverdon.mss.view.ServerInfoPanel();
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        menuCredits = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Melee Stream Scoreboard");
 
         tabbedPane.setMinimumSize(new java.awt.Dimension(625, 480));
         tabbedPane.setPreferredSize(new java.awt.Dimension(625, 480));
-        tabbedPane.addTab("Players", playersInfoPanel1);
-        tabbedPane.addTab("General", generalInfoPanel1);
-        tabbedPane.addTab("Crews", crewBattlePanel1);
-        tabbedPane.addTab("Server", serverInfoPanel1);
+        tabbedPane.addTab("Players", playersInfoPanel);
+        tabbedPane.addTab("General", generalInfoPanel);
+        tabbedPane.addTab("Crews", crewBattlePanel);
+        tabbedPane.addTab("Server", serverInfoPanel);
 
         buttonUpdate.setText("Update");
         buttonUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -72,13 +72,13 @@ public class MainWindow extends javax.swing.JFrame {
         jMenu2.setText("Edit");
         menuBar.add(jMenu2);
 
-        jMenu3.setText("Credits");
-        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuCredits.setText("Credits");
+        menuCredits.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu3MouseClicked(evt);
+                menuCreditsMouseClicked(evt);
             }
         });
-        menuBar.add(jMenu3);
+        menuBar.add(menuCredits);
 
         setJMenuBar(menuBar);
 
@@ -106,15 +106,15 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         JSONObject json = new JSONObject();
-        json.put("players", playersInfoPanel1.getInfo());
-        json.put("general", generalInfoPanel1.getInfo());
-        json.put("crews", crewBattlePanel1.getInfo());
+        json.put("players", playersInfoPanel.getInfo());
+        json.put("general", generalInfoPanel.getInfo());
+        json.put("crews", crewBattlePanel.getInfo());
         System.out.println("Saving...");
         FileUtils.writeJSON("output/output.json", json);
         System.out.println("Done.");
     }//GEN-LAST:event_buttonUpdateActionPerformed
 
-    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+    private void menuCreditsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCreditsMouseClicked
         ImageIcon icon = new ImageIcon("img/icons/mss_logo_128.png");
         String msg = "Melee Stream Scoreboard \n"
             + "Author: Nacho 'bazoo' Verdón \n"
@@ -125,7 +125,7 @@ public class MainWindow extends javax.swing.JFrame {
                 "Credits", JOptionPane.INFORMATION_MESSAGE,
                 icon
         );
-    }//GEN-LAST:event_jMenu3MouseClicked
+    }//GEN-LAST:event_menuCreditsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -175,14 +175,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonUpdate;
-    private com.nachoverdon.mss.view.CrewBattlePanel crewBattlePanel1;
-    private com.nachoverdon.mss.view.GeneralInfoPanel generalInfoPanel1;
+    private com.nachoverdon.mss.view.CrewBattlePanel crewBattlePanel;
+    private com.nachoverdon.mss.view.GeneralInfoPanel generalInfoPanel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar menuBar;
-    private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel1;
-    private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel1;
+    private javax.swing.JMenu menuCredits;
+    private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel;
+    private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel;
     private javax.swing.JTabbedPane tabbedPane;
     // End of variables declaration//GEN-END:variables
 }

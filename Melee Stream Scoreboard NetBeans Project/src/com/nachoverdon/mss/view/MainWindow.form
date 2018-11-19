@@ -14,12 +14,12 @@
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="menuCredits">
           <Properties>
             <Property name="text" type="java.lang.String" value="Credits"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu3MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuCreditsMouseClicked"/>
           </Events>
         </Menu>
       </SubComponents>
@@ -81,7 +81,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Component class="com.nachoverdon.mss.view.PlayersInfoPanel" name="playersInfoPanel1">
+        <Component class="com.nachoverdon.mss.view.PlayersInfoPanel" name="playersInfoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Players">
@@ -90,7 +90,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.nachoverdon.mss.view.GeneralInfoPanel" name="generalInfoPanel1">
+        <Component class="com.nachoverdon.mss.view.GeneralInfoPanel" name="generalInfoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="General">
@@ -99,7 +99,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.nachoverdon.mss.view.CrewBattlePanel" name="crewBattlePanel1">
+        <Component class="com.nachoverdon.mss.view.CrewBattlePanel" name="crewBattlePanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Crews">
@@ -108,7 +108,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="com.nachoverdon.mss.view.ServerInfoPanel" name="serverInfoPanel1">
+        <Component class="com.nachoverdon.mss.view.ServerInfoPanel" name="serverInfoPanel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Server">
