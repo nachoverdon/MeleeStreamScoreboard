@@ -86,7 +86,7 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(buttonUpdate)
@@ -105,10 +105,16 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
-        JSONObject json = new JSONObject();
+        JSONObject json = new JSONObject(),
+            crews = crewBattlePanel.getInfo();
+        
         json.put("players", playersInfoPanel.getInfo());
         json.put("general", generalInfoPanel.getInfo());
-        json.put("crews", crewBattlePanel.getInfo());
+        
+        if (crews != null) {
+            json.put("crews", crews);
+        }
+        
         System.out.println("Saving...");
         FileUtils.writeJSON("output/output.json", json);
         System.out.println("Done.");

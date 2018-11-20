@@ -38,6 +38,7 @@
                   <Component id="labelStocks" pref="64" max="32767" attributes="0"/>
                   <Component id="stocks" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Component id="jScrollPane" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -104,49 +105,25 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="name3" max="32767" attributes="0"/>
-                          <Component id="name4" max="32767" attributes="0"/>
-                          <Component id="name5" max="32767" attributes="0"/>
-                          <Component id="name6" max="32767" attributes="0"/>
-                          <Component id="name7" max="32767" attributes="0"/>
-                          <Component id="name8" max="32767" attributes="0"/>
-                          <Component id="name9" max="32767" attributes="0"/>
-                          <Component id="name10" max="32767" attributes="0"/>
-                          <Component id="labelPlayersName" min="-2" pref="160" max="-2" attributes="0"/>
-                          <Component id="name1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="name2" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="character10" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character9" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character8" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character7" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character6" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character5" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character4" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character3" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character2" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="character1" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="labelPlayersName" min="-2" pref="160" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="labelPlayerCharacter" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labalPlayerStocksTaken" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="labelPlayerCharacter" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="stocksTaken1" max="32767" attributes="0"/>
-                          <Component id="labalPlayerStocksTaken" max="32767" attributes="0"/>
-                          <Component id="stocksTaken2" max="32767" attributes="0"/>
-                          <Component id="stocksTaken3" max="32767" attributes="0"/>
-                          <Component id="stocksTaken4" max="32767" attributes="0"/>
-                          <Component id="stocksTaken5" max="32767" attributes="0"/>
-                          <Component id="stocksTaken6" max="32767" attributes="0"/>
-                          <Component id="stocksTaken7" max="32767" attributes="0"/>
-                          <Component id="stocksTaken8" max="32767" attributes="0"/>
-                          <Component id="stocksTaken9" max="32767" attributes="0"/>
-                          <Component id="stocksTaken10" max="32767" attributes="0"/>
+                          <Component id="crewMemberPanel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="crewMemberPanel10" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   </Group>
@@ -160,67 +137,27 @@
                           <Component id="labelPlayerCharacter" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labalPlayerStocksTaken" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken1" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken2" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken4" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken5" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name6" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character6" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken6" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name7" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character7" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken7" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name8" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character8" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken8" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name9" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character9" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken9" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="name10" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="character10" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="stocksTaken10" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="crewMemberPanel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -238,278 +175,28 @@
             </Component>
             <Component class="javax.swing.JLabel" name="labalPlayerStocksTaken">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Stocks Taken"/>
+                <Property name="text" type="java.lang.String" value="Stocks Left/Taken"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="name1">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel1">
             </Component>
-            <Component class="javax.swing.JComboBox" name="character1">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel2">
             </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken1">
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel3">
             </Component>
-            <Component class="javax.swing.JComboBox" name="name2">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel4">
             </Component>
-            <Component class="javax.swing.JComboBox" name="character2">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel5">
             </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken2">
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel6">
             </Component>
-            <Component class="javax.swing.JComboBox" name="name3">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel7">
             </Component>
-            <Component class="javax.swing.JComboBox" name="character3">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel8">
             </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken3">
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel9">
             </Component>
-            <Component class="javax.swing.JComboBox" name="name4">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character4">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken4">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name5">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character5">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken5">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name6">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character6">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken6">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name7">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character7">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken7">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name8">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character8">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken8">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name9">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character9">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken9">
-            </Component>
-            <Component class="javax.swing.JComboBox" name="name10">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="character10">
-              <Properties>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
-                <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[128, 26]"/>
-                </Property>
-                <Property name="name" type="java.lang.String" value="" noResource="true"/>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;IconItem&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JSpinner" name="stocksTaken10">
+            <Component class="com.nachoverdon.mss.view.CrewMemberPanel" name="crewMemberPanel10">
             </Component>
           </SubComponents>
         </Container>

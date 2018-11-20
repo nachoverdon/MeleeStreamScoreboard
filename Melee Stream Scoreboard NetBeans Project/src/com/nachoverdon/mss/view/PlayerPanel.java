@@ -295,19 +295,14 @@ public class PlayerPanel extends javax.swing.JPanel {
         json.put("score", spinnerScore.getValue());
         
         JSONObject character = new JSONObject();
-        character.put("name", getItemName(comboBoxCharacter));
-        character.put("color", getItemName(comboBoxColor));
+        character.put("name", IconItem.getItemName(comboBoxCharacter));
+        character.put("color", IconItem.getItemName(comboBoxColor));
         
         json.put("character", character);
-        json.put("sponsor", getItemName(comboBoxSponsor));
+        json.put("sponsor", IconItem.getItemName(comboBoxSponsor));
         json.put("flag", comboBoxFlag.getSelectedItem());
         
         return json;
-    }
-    
-    private String getItemName(JComboBox<IconItem> comboBox) {
-        IconItem item = (IconItem)comboBox.getSelectedItem();
-        return item.name;
     }
     
     private void comboBoxCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCharacterActionPerformed

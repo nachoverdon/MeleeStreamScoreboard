@@ -51,10 +51,14 @@ public class CrewBattlePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     public JSONObject getInfo() {
-        JSONObject json = new JSONObject();
+        JSONObject json = new JSONObject(),
+            crew1 = crewPanel1.getInfo(),
+            crew2 = crewPanel2.getInfo();
         
-        json.put("crew1", crewPanel1.getInfo());
-        json.put("crew2", crewPanel2.getInfo());
+        if (crew1 == null && crew2 == null) return null;
+        
+        json.put("crew1", crew1);
+        json.put("crew2", crew2);
         
         return json;
     }

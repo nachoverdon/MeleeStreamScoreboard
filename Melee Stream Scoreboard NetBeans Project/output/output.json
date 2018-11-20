@@ -32,7 +32,73 @@
     }
   },
   "crews": {
-    "crew1": {},
-    "crew2": {}
+    "crew1": {
+      "player5": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Dani Norimaki",
+        "stocksLeft": 0
+      },
+      "player1": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "bazoo",
+        "stocksLeft": 0
+      },
+      "player2": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Libro",
+        "stocksLeft": 0
+      },
+      "player3": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Brail",
+        "stocksLeft": 0
+      },
+      "player4": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Dani Norimaki",
+        "stocksLeft": 0
+      },
+      "name": "team1",
+      "stocks": 0
+    },
+    "crew2": {
+      "player5": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Azu",
+        "stocksLeft": 0
+      },
+      "player1": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Brail",
+        "stocksLeft": 0
+      },
+      "player2": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Dabe",
+        "stocksLeft": 0
+      },
+      "player3": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "El_Bardo",
+        "stocksLeft": 0
+      },
+      "player4": {
+        "character": "Bowser",
+        "stocksTaken": 0,
+        "name": "Akif",
+        "stocksLeft": 0
+      },
+      "name": "team2",
+      "stocks": 0
+    }
   }
 }

@@ -6,6 +6,7 @@
 package com.nachoverdon.mss.model;
 
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -18,4 +19,10 @@ public class IconItem {
     }
     public String name;
     public ImageIcon icon;
+    
+    
+    public static String getItemName(JComboBox<IconItem> comboBox) {
+        IconItem item = (IconItem) comboBox.getSelectedItem();
+        return item.name;
+    }
 }
