@@ -178,10 +178,14 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void initFields() {
-        initNames();
-        initCharacters();
-        initSponsors();
-        initFlags();
+        try {
+            initNames();
+            initCharacters();
+            initSponsors();
+            initFlags();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
     
     private void initNames() {

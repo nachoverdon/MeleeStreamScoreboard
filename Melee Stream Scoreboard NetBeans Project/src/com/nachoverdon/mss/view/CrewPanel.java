@@ -30,20 +30,7 @@ public class CrewPanel extends javax.swing.JPanel {
      */
     public CrewPanel() {
         initComponents();
-        players = new CrewMember[]{
-            new CrewMember(name1, character1, stocksTaken1),
-            new CrewMember(name2, character2, stocksTaken2),
-            new CrewMember(name3, character3, stocksTaken3),
-            new CrewMember(name4, character4, stocksTaken4),
-            new CrewMember(name5, character5, stocksTaken5),
-            new CrewMember(name6, character6, stocksTaken6),
-            new CrewMember(name7, character7, stocksTaken7),
-            new CrewMember(name8, character8, stocksTaken8),
-            new CrewMember(name9, character9, stocksTaken9),
-            new CrewMember(name10, character10, stocksTaken10)
-        };
-        initCrewPlayers();
-        
+        initFields();
     }
 
     /**
@@ -299,6 +286,26 @@ public class CrewPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initFields() {
+        try {
+            players = new CrewMember[]{
+                new CrewMember(name1, character1, stocksTaken1),
+                new CrewMember(name2, character2, stocksTaken2),
+                new CrewMember(name3, character3, stocksTaken3),
+                new CrewMember(name4, character4, stocksTaken4),
+                new CrewMember(name5, character5, stocksTaken5),
+                new CrewMember(name6, character6, stocksTaken6),
+                new CrewMember(name7, character7, stocksTaken7),
+                new CrewMember(name8, character8, stocksTaken8),
+                new CrewMember(name9, character9, stocksTaken9),
+                new CrewMember(name10, character10, stocksTaken10)
+            };
+            initCrewPlayers();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void initCrewPlayers() {
         JSONObject charJson = FileUtils.getCharacters();
 

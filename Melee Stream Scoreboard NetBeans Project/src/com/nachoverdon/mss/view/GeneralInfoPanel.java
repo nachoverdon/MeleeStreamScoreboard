@@ -20,9 +20,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
      */
     public GeneralInfoPanel() {
         initComponents();
-        initRounds();
-        initCasters();
-        initPlayerCam();
+        initFields();
         enableAutocompletion();
     }
 
@@ -307,6 +305,16 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initFields() {
+        try {
+            initRounds();
+            initCasters();
+            initPlayerCam();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void enableAutocompletion() {
         AutoCompletion.enable(comboBoxRound);
         AutoCompletion.enable(comboBoxTournamentName);

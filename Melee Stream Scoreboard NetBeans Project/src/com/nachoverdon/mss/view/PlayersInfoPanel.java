@@ -24,7 +24,6 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         panelPlayer2.setBorderTitle("Player 2");
         panelPlayer3.setBorderTitle("Player 3");
         panelPlayer4.setBorderTitle("Player 4");
-        setVisible(true);
 
         teamsComponents = new JComponent[]{
             panelPlayer3, panelPlayer4, buttonSwap1And3, buttonSwap2And4,
