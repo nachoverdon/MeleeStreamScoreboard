@@ -1,6 +1,8 @@
 # MeleeStreamScoreboard
 A tool to easily administrate Super Smash Bros. Melee streams
 
+![MSS](https://i.imgur.com/oR8tzav.png)
+
 Requires org.json library to build https://github.com/stleary/JSON-java
 
 ## Features:
