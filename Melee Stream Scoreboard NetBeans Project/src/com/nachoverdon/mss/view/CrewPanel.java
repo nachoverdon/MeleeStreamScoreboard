@@ -37,7 +37,7 @@ public class CrewPanel extends javax.swing.JPanel {
         labelName = new javax.swing.JLabel();
         labelStocks = new javax.swing.JLabel();
         comboBoxName = new javax.swing.JComboBox<>();
-        stocks = new javax.swing.JSpinner();
+        stocksLeft = new javax.swing.JSpinner();
         jScrollPane = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         labelPlayersName = new javax.swing.JLabel();
@@ -136,10 +136,10 @@ public class CrewPanel extends javax.swing.JPanel {
                     .addComponent(comboBoxName, 0, 220, Short.MAX_VALUE)
                     .addComponent(labelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(labelStocks, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                    .addComponent(stocks))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelStocks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stocksLeft))
+                .addContainerGap())
             .addComponent(jScrollPane)
         );
         layout.setVerticalGroup(
@@ -151,7 +151,7 @@ public class CrewPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stocks, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(stocksLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane))
         );
@@ -189,7 +189,7 @@ public class CrewPanel extends javax.swing.JPanel {
         if (name == null || name.equals("")) return null;
         
         json.put("name", name);
-        json.put("stocks", stocks.getValue());
+        json.put("stocksLeft", stocksLeft.getValue());
         
         for (int i = 0; i < members.length; i++) {
             JSONObject member = members[i].getInfo();
@@ -198,6 +198,18 @@ public class CrewPanel extends javax.swing.JPanel {
         }        
         
         return json;
+    }
+    
+    public void calculateStocksLeft() {
+        int stocks = 0;
+        
+        for (CrewMemberPanel member: members) {
+            if (member.isEnabled()) {
+                stocks += member.getStocksLeft();
+            }
+        }
+        
+        stocksLeft.setValue(stocks);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -219,6 +231,6 @@ public class CrewPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelPlayerCharacter;
     private javax.swing.JLabel labelPlayersName;
     private javax.swing.JLabel labelStocks;
-    private javax.swing.JSpinner stocks;
+    private javax.swing.JSpinner stocksLeft;
     // End of variables declaration//GEN-END:variables
 }

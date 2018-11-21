@@ -34,11 +34,11 @@
                   <Component id="labelName" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="labelStocks" pref="64" max="32767" attributes="0"/>
-                  <Component id="stocks" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="labelStocks" max="32767" attributes="0"/>
+                  <Component id="stocksLeft" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Component id="jScrollPane" alignment="0" max="32767" attributes="0"/>
       </Group>
@@ -53,7 +53,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="stocks" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="stocksLeft" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane" max="32767" attributes="0"/>
@@ -83,7 +83,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JSpinner" name="stocks">
+    <Component class="javax.swing.JSpinner" name="stocksLeft">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane">
       <Properties>

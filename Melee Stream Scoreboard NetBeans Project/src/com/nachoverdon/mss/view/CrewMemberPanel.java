@@ -27,6 +27,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
     public CrewMemberPanel() {
         initComponents();
         initFields();
+        disableFields();
     }
     
     private void initFields() {
@@ -72,18 +73,25 @@ public class CrewMemberPanel extends javax.swing.JPanel {
     public JSONObject getInfo() {
         JSONObject json = new JSONObject();
 
-        String name = (String) comboBoxName.getSelectedItem();
-
-        if (name == null || name.equals("")) {
+        if (!isEnabled()) {
             return null;
         }
 
-        json.put("name", name);
+        json.put("name", comboBoxName.getSelectedItem());
         json.put("character", IconItem.getItemName(comboBoxCharacter));
-        json.put("stocksLeft", stocksTaken.getValue());
+        json.put("stocksLeft", getStocksLeft());
         json.put("stocksTaken", stocksLeft.getValue());
 
         return json;
+    }
+    
+    public int getStocksLeft() {
+        return (int)stocksLeft.getValue();
+    }
+    
+    public boolean isEnabled() {
+        String name = (String) comboBoxName.getSelectedItem();
+        return name != null && !name.equals("");
     }
 
     /**
@@ -104,34 +112,94 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         comboBoxName.setToolTipText("");
         comboBoxName.setMaximumSize(new java.awt.Dimension(128, 26));
         comboBoxName.setName(""); // NOI18N
+        comboBoxName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxNameActionPerformed(evt);
+            }
+        });
 
         comboBoxCharacter.setToolTipText("");
         comboBoxCharacter.setMaximumSize(new java.awt.Dimension(128, 26));
         comboBoxCharacter.setName(""); // NOI18N
+        comboBoxCharacter.setPreferredSize(new java.awt.Dimension(32, 20));
+
+        stocksLeft.setModel(new javax.swing.SpinnerNumberModel(4, 0, 99, 1));
+        stocksLeft.setEnabled(false);
+        stocksLeft.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                stocksLeftStateChanged(evt);
+            }
+        });
+
+        stocksTaken.setModel(new javax.swing.SpinnerNumberModel(0, 0, 99, 1));
+        stocksTaken.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(comboBoxCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(comboBoxCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(stocksLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stocksTaken, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(stocksTaken, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(comboBoxCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(stocksLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(stocksTaken, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(stocksLeft)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(comboBoxCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(stocksTaken)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
+        String name = (String)comboBoxName.getSelectedItem();
+        
+        if (name.equals("")) {
+            disableFields();
+        } else {
+            enableFields();
+        }
+
+        try {
+            updateTotalStocksLeft();
+        } catch (NullPointerException e) {
+            System.out.println("This probably happened while loading the panel,"
+                    + "you can ignore it... I think.");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_comboBoxNameActionPerformed
+
+    private void stocksLeftStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_stocksLeftStateChanged
+        updateTotalStocksLeft();
+    }//GEN-LAST:event_stocksLeftStateChanged
+
+    private void updateTotalStocksLeft() {
+        // TODO: ROFL, this sucks but works. Enhance child/parent listener. maybe. lol
+        CrewPanel crewPanel = (CrewPanel) getParent() // CrewMemberPanel 
+                .getParent() // JViewport 
+                .getParent() // JScrollPane
+                .getParent(); // CrewPanel
+        crewPanel.calculateStocksLeft();
+    }
+    
+    private void enableFields() {
+        comboBoxCharacter.setEnabled(true);
+        stocksLeft.setEnabled(true);
+        stocksTaken.setEnabled(true);
+    }
+    
+    private void disableFields() {
+        comboBoxCharacter.setEnabled(false);
+        stocksLeft.setEnabled(false);
+        stocksTaken.setEnabled(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<IconItem> comboBoxCharacter;
