@@ -5,6 +5,7 @@
  */
 package com.nachoverdon.mss.view;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -61,6 +62,18 @@ public class CrewBattlePanel extends javax.swing.JPanel {
         json.put("crew2", crew2);
         
         return json;
+    }
+    
+    public void setInfo(JSONObject json) {
+        try {
+            JSONObject crew1 = json.getJSONObject("crew1"),
+                crew2 = json.getJSONObject("crew2");
+
+            if (crew1 != null) crewPanel1.setInfo(crew1);
+            if (crew2 != null) crewPanel2.setInfo(crew2);
+        } catch (JSONException e) {
+            // No crews
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

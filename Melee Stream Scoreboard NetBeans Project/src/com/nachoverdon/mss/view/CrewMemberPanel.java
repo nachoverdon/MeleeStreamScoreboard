@@ -42,9 +42,16 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         json.put("name", comboBoxName.getSelectedItem());
         json.put("character", ComboBoxUtils.getSelectedItemName(comboBoxCharacter));
         json.put("stocksLeft", getStocksLeft());
-        json.put("stocksTaken", stocksLeft.getValue());
+        json.put("stocksTaken", stocksTaken.getValue());
 
         return json;
+    }
+    
+    public void setInfo(JSONObject json) {
+        comboBoxName.setSelectedItem(json.getString("name"));
+        ComboBoxUtils.setSelectedByName(comboBoxCharacter, json.getString("character"));
+        stocksLeft.setValue(json.getInt("stocksLeft"));
+        stocksTaken.setValue(json.getInt("stocksTaken"));
     }
     
     public int getStocksLeft() {

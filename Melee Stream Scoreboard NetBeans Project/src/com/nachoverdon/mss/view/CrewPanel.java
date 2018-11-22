@@ -6,6 +6,7 @@
 package com.nachoverdon.mss.view;
 
 import javax.swing.border.TitledBorder;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -188,13 +189,35 @@ public class CrewPanel extends javax.swing.JPanel {
         json.put("name", name);
         json.put("stocksLeft", stocksLeft.getValue());
         
+        JSONObject membersJson = new JSONObject();
         for (int i = 0; i < members.length; i++) {
             JSONObject member = members[i].getInfo();
+            
             if (member == null) continue;
-            json.put("player" + (i + 1), member);
-        }        
+            
+            membersJson.put("player" + (i + 1), member);
+        }
+        json.put("members", membersJson);
         
         return json;
+    }
+    
+    public void setInfo(JSONObject json) {
+       comboBoxName.setSelectedItem(json.getString("name"));
+       stocksLeft.setValue(json.getInt("stocksLeft"));
+       
+       JSONObject membersJson = json.getJSONObject("members");
+       
+       for (int i = 0; i < members.length; i++) {
+           try {
+            JSONObject member = membersJson.getJSONObject("player" + (i + 1));
+            members[i].setInfo(member);   
+
+           } catch (JSONException e) {
+               // e.printStackTrace();
+               break;
+           }
+       }
     }
     
     // Get the stocks from enabled crew members and sums them.

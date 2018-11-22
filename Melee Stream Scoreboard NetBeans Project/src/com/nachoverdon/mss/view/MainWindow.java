@@ -46,6 +46,7 @@ public class MainWindow extends javax.swing.JFrame {
         buttonUpdate = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        menuItemLoadPrevious = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuCredits = new javax.swing.JMenu();
 
@@ -68,6 +69,15 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         jMenu1.setText("File");
+
+        menuItemLoadPrevious.setText("Load previous data");
+        menuItemLoadPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemLoadPreviousActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menuItemLoadPrevious);
+
         menuBar.add(jMenu1);
 
         jMenu2.setText("Edit");
@@ -136,6 +146,15 @@ public class MainWindow extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_menuCreditsMouseClicked
 
+    private void menuItemLoadPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLoadPreviousActionPerformed
+        JSONObject json = FileUtils.readJSON("output/output.json"),
+            crews = json.getJSONObject("crews");
+        
+        if (crews != null) {
+            crewBattlePanel.setInfo(crews);
+        }
+    }//GEN-LAST:event_menuItemLoadPreviousActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -191,6 +210,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuCredits;
+    private javax.swing.JMenuItem menuItemLoadPrevious;
     private com.nachoverdon.mss.view.PlayersInfoPanel playersInfoPanel;
     private com.nachoverdon.mss.view.ServerInfoPanel serverInfoPanel;
     private javax.swing.JTabbedPane tabbedPane;
