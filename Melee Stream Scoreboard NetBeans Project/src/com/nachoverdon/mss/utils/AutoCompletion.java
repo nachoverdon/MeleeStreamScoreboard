@@ -13,6 +13,9 @@ import javax.swing.text.*;
 /**
  *
  * @author bazoo
+ * actually no, lol, i got this from here: https://www.daniweb.com/programming/software-development/threads/378152/auto-complete-jcombo-box
+ * It doesn't really works as I want, so I'll change it in the future, probably 
+ * all of it.
  */
 public class AutoCompletion extends PlainDocument {
     JComboBox comboBox;

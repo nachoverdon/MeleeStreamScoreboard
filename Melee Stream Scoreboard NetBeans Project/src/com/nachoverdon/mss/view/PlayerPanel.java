@@ -187,6 +187,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         }
     }
     
+    // Fills the combobox with the sponsors icons given in the sponsor.json
+    // Also adds the 'No sponsor' icon as first item.
     private void initSponsors() {
         comboBoxSponsor.removeAllItems();
         comboBoxSponsor.setRenderer(new IconRenderer());
@@ -211,6 +213,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         }
     }
     
+    // Fills the combobox with the flag icon and names while keeping the
+    // ability to search by name. (thus JComboBox<String>)
     private void initFlags() {
         comboBoxFlag.removeAllItems();
         comboBoxFlag.setRenderer(new FlagRenderer());
@@ -232,6 +236,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         // save file
     }//GEN-LAST:event_comboBoxNameActionPerformed
     
+    // Updates the color comboBox depending on the character selected
+    // and fills it with the corresponding colors.
     public void changeColorsComboBox() {
         IconItem selected = (IconItem)comboBoxCharacter.getSelectedItem();
         JSONArray colorsArr = FileUtils.getColors(selected.name);

@@ -173,6 +173,7 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         swapPlayersInfo(panelPlayer1, panelPlayer3);
     }//GEN-LAST:event_buttonSwap1And3ActionPerformed
 
+    // Gets the data from 2 players and swaps them.
     private void swapPlayersInfo(PlayerPanel p1, PlayerPanel p2) {
         JSONObject json1 = p1.getInfo(),
             json2 = p2.getInfo();
@@ -184,6 +185,7 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         return checkBoxTeams.isSelected();
     }
 
+    // Enables or disables the necessary team components (p3, p4 and buttons)
     private void setTeams(boolean enable) {
         checkBoxTeams.setSelected(enable);
         for (JComponent component: teamsComponents) {

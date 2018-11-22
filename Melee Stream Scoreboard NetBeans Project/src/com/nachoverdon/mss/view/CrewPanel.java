@@ -197,6 +197,7 @@ public class CrewPanel extends javax.swing.JPanel {
         return json;
     }
     
+    // Get the stocks from enabled crew members and sums them.
     public void calculateStocksLeft() {
         int stocks = 0;
         

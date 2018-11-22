@@ -6,6 +6,7 @@
 package com.nachoverdon.mss.view;
 
 import com.nachoverdon.mss.utils.AutoCompletion;
+import com.nachoverdon.mss.utils.ComboBoxUtils;
 import com.nachoverdon.mss.utils.FileUtils;
 import org.json.JSONObject;
 
@@ -71,11 +72,6 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxRound.setEditable(true);
         comboBoxRound.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxRound.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxRoundActionPerformed(evt);
-            }
-        });
 
         labelTournamentName.setText("Tournament name");
 
@@ -83,19 +79,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxTournamentName.setEditable(true);
         comboBoxTournamentName.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxTournamentName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxTournamentNameActionPerformed(evt);
-            }
-        });
 
         comboBoxBracket.setEditable(true);
         comboBoxBracket.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxBracket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxBracketActionPerformed(evt);
-            }
-        });
 
         labelCaster1.setText("Caster 1");
 
@@ -103,19 +89,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxCaster1.setEditable(true);
         comboBoxCaster1.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxCaster1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxCaster1ActionPerformed(evt);
-            }
-        });
 
         comboBoxCaster2.setEditable(true);
         comboBoxCaster2.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxCaster2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxCaster2ActionPerformed(evt);
-            }
-        });
 
         labelPlayerCam1.setText("Player Cam 1");
 
@@ -123,19 +99,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxPlayerCam1.setEditable(true);
         comboBoxPlayerCam1.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxPlayerCam1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxPlayerCam1ActionPerformed(evt);
-            }
-        });
 
         comboBoxPlayerCam2.setEditable(true);
         comboBoxPlayerCam2.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxPlayerCam2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxPlayerCam2ActionPerformed(evt);
-            }
-        });
 
         labelPlayerCam3.setText("Player Cam 3");
 
@@ -143,19 +109,9 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxPlayerCam3.setEditable(true);
         comboBoxPlayerCam3.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxPlayerCam3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxPlayerCam3ActionPerformed(evt);
-            }
-        });
 
         comboBoxPlayerCam4.setEditable(true);
         comboBoxPlayerCam4.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxPlayerCam4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxPlayerCam4ActionPerformed(evt);
-            }
-        });
 
         labelWebsite.setText("Website");
 
@@ -163,29 +119,14 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         comboBoxWebsite.setEditable(true);
         comboBoxWebsite.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxWebsite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxWebsiteActionPerformed(evt);
-            }
-        });
 
         comboBoxTwitch.setEditable(true);
         comboBoxTwitch.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxTwitch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxTwitchActionPerformed(evt);
-            }
-        });
 
         labelMessage.setText("Message");
 
         comboBoxMessage.setEditable(true);
         comboBoxMessage.setMaximumSize(new java.awt.Dimension(128, 26));
-        comboBoxMessage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboBoxMessageActionPerformed(evt);
-            }
-        });
 
         buttonSend.setText("Send");
 
@@ -339,17 +280,10 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     }
     
     private void initPlayerCam() {       
-        comboBoxPlayerCam1.addItem("");
-        comboBoxPlayerCam2.addItem("");
-        comboBoxPlayerCam3.addItem("");
-        comboBoxPlayerCam4.addItem("");
-        
-        for (String player: FileUtils.getNames()) {
-            comboBoxPlayerCam1.addItem(player);
-            comboBoxPlayerCam2.addItem(player);
-            comboBoxPlayerCam3.addItem(player);
-            comboBoxPlayerCam4.addItem(player);
-        }
+        ComboBoxUtils.initPlayers(comboBoxPlayerCam1);
+        ComboBoxUtils.initPlayers(comboBoxPlayerCam2);
+        ComboBoxUtils.initPlayers(comboBoxPlayerCam3);
+        ComboBoxUtils.initPlayers(comboBoxPlayerCam4);
     }
     
     private void initCasters() {
@@ -362,54 +296,6 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         }
     }
     
-    private void comboBoxCaster1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCaster1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxCaster1ActionPerformed
-
-    private void comboBoxCaster2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCaster2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxCaster2ActionPerformed
-
-    private void comboBoxRoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxRoundActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxRoundActionPerformed
-
-    private void comboBoxTournamentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTournamentNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxTournamentNameActionPerformed
-
-    private void comboBoxPlayerCam2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlayerCam2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxPlayerCam2ActionPerformed
-
-    private void comboBoxPlayerCam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlayerCam1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxPlayerCam1ActionPerformed
-
-    private void comboBoxPlayerCam4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlayerCam4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxPlayerCam4ActionPerformed
-
-    private void comboBoxPlayerCam3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPlayerCam3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxPlayerCam3ActionPerformed
-
-    private void comboBoxMessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxMessageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxMessageActionPerformed
-
-    private void comboBoxBracketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxBracketActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxBracketActionPerformed
-
-    private void comboBoxWebsiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxWebsiteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxWebsiteActionPerformed
-
-    private void comboBoxTwitchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxTwitchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboBoxTwitchActionPerformed
-
     public JSONObject getInfo() {
         JSONObject json = new JSONObject();
         

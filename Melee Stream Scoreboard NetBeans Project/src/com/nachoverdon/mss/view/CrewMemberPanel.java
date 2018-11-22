@@ -51,6 +51,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         return (int)stocksLeft.getValue();
     }
     
+    // If it has a name, it's enabled.
     public boolean isEnabled() {
         String name = (String) comboBoxName.getSelectedItem();
         return name != null && !name.equals("");
@@ -122,6 +123,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    // Enable the fields when a name is selected or disables them if not.
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
         String name = (String)comboBoxName.getSelectedItem();
         
@@ -140,10 +142,12 @@ public class CrewMemberPanel extends javax.swing.JPanel {
 //        }
     }//GEN-LAST:event_comboBoxNameActionPerformed
 
+    // Updates the total stocks left whenever a player updates their stocks left
     private void stocksLeftStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_stocksLeftStateChanged
         updateTotalStocksLeft();
     }//GEN-LAST:event_stocksLeftStateChanged
 
+    // Calls the parent CrewPanel to update the total stock count.
     private void updateTotalStocksLeft() {
         // TODO: ROFL, this sucks but works. Enhance child/parent listener. maybe. lol
         CrewPanel crewPanel = (CrewPanel) getParent() // CrewMemberPanel 
@@ -153,6 +157,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         crewPanel.calculateStocksLeft();
     }
     
+    // Enable fields and updates stocks
     private void setFields(boolean enabled) {
         comboBoxCharacter.setEnabled(enabled);
         stocksLeft.setEnabled(enabled);

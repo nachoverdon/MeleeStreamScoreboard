@@ -23,6 +23,8 @@ public class ComboBoxUtils {
         return item.name;
     }
     
+    // Sets the selected item of the combobox to the IconItem that matches the 
+    // name.
     public static void setSelectedByName(JComboBox<IconItem> comboBox, 
         String name) {
         
@@ -37,6 +39,8 @@ public class ComboBoxUtils {
         }
     }
     
+    // Fills the combobox with the names of the players, and adds an empty string
+    // optionally.
     public static void initPlayers(JComboBox<String> comboBox, 
             boolean addEmpty) {
         if (addEmpty) comboBox.addItem("");
@@ -52,6 +56,8 @@ public class ComboBoxUtils {
         initPlayers(comboBox, true);
     }
     
+    // Fills the combobox with the character icons, and sets the renderer to
+    // display the names or not.
     public static void initCharacters(JComboBox<IconItem> comboBox, 
             boolean showText) {
         comboBox.removeAllItems();

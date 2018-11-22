@@ -105,6 +105,7 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Gathers all the possible info and saves it in a JSON file.
     private void buttonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonUpdateActionPerformed
         JSONObject json = new JSONObject(),
             crews = crewBattlePanel.getInfo();
@@ -121,6 +122,7 @@ public class MainWindow extends javax.swing.JFrame {
         System.out.println("Done.");
     }//GEN-LAST:event_buttonUpdateActionPerformed
 
+    // Displays a window with the application credits and logo.
     private void menuCreditsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCreditsMouseClicked
         ImageIcon icon = new ImageIcon("img/icons/mss_logo_128.png");
         String msg = "Melee Stream Scoreboard \n"
@@ -170,6 +172,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
 
+    // Sets the icons for the application, window, appbar...
     private void setIcons() {
         String path = "./img/icons/mss_logo_";
         ArrayList<Image> icons = new ArrayList<Image>();
