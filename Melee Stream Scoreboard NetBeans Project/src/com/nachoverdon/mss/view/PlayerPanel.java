@@ -43,12 +43,14 @@ public class PlayerPanel extends javax.swing.JPanel {
 
         labelName = new javax.swing.JLabel();
         labelScore = new javax.swing.JLabel();
+        labelPort = new javax.swing.JLabel();
         labelCharacter = new javax.swing.JLabel();
         labelColor = new javax.swing.JLabel();
         labelSponsor = new javax.swing.JLabel();
         labelFlag = new javax.swing.JLabel();
         comboBoxName = new javax.swing.JComboBox<>();
         spinnerScore = new javax.swing.JSpinner();
+        spinnerPort = new javax.swing.JSpinner();
         comboBoxCharacter = new javax.swing.JComboBox<>();
         comboBoxColor = new javax.swing.JComboBox<>();
         comboBoxSponsor = new javax.swing.JComboBox<>();
@@ -65,6 +67,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         labelScore.setMaximumSize(new java.awt.Dimension(65, 14));
         labelScore.setMinimumSize(new java.awt.Dimension(65, 14));
         labelScore.setPreferredSize(new java.awt.Dimension(65, 14));
+
+        labelPort.setText("Port");
 
         labelCharacter.setText("Character");
         labelCharacter.setMaximumSize(new java.awt.Dimension(65, 14));
@@ -96,6 +100,8 @@ public class PlayerPanel extends javax.swing.JPanel {
 
         spinnerScore.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         spinnerScore.setMaximumSize(new java.awt.Dimension(37, 26));
+
+        spinnerPort.setModel(new javax.swing.SpinnerNumberModel(1, 1, 4, 1));
 
         comboBoxCharacter.setMinimumSize(new java.awt.Dimension(28, 30));
         comboBoxCharacter.setPreferredSize(new java.awt.Dimension(28, 30));
@@ -131,13 +137,19 @@ public class PlayerPanel extends javax.swing.JPanel {
                         .addComponent(comboBoxName, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(labelColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxFlag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(labelColor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(labelFlag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(comboBoxColor, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spinnerScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxFlag, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                            .addComponent(spinnerScore, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(spinnerPort)
+                            .addComponent(labelPort, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -145,11 +157,13 @@ public class PlayerPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelPort))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spinnerScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnerScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerPort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCharacter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,6 +188,10 @@ public class PlayerPanel extends javax.swing.JPanel {
     public void setBorderTitle(String title) {
         TitledBorder border = (TitledBorder)getBorder();
         border.setTitle(title);
+    }
+    
+    public void setPort(int port) {
+        spinnerPort.setValue(port);
     }
     
     private void initFields() {
@@ -269,6 +287,7 @@ public class PlayerPanel extends javax.swing.JPanel {
         
         json.put("name", comboBoxName.getSelectedItem());
         json.put("score", spinnerScore.getValue());
+        json.put("port", spinnerPort.getValue());
         
         JSONObject character = new JSONObject();
         character.put("name", ComboBoxUtils.getSelectedItemName(comboBoxCharacter));
@@ -284,6 +303,7 @@ public class PlayerPanel extends javax.swing.JPanel {
     public void setInfo(JSONObject json) {
         comboBoxName.setSelectedItem(json.getString("name"));
         spinnerScore.setValue(json.getInt("score"));
+        setPort(json.getInt("port"));
         
         JSONObject ch = json.getJSONObject("character");
         ComboBoxUtils.setSelectedByName(comboBoxCharacter, ch.getString("name"));
@@ -307,8 +327,10 @@ public class PlayerPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelColor;
     private javax.swing.JLabel labelFlag;
     private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelPort;
     private javax.swing.JLabel labelScore;
     private javax.swing.JLabel labelSponsor;
+    private javax.swing.JSpinner spinnerPort;
     private javax.swing.JSpinner spinnerScore;
     // End of variables declaration//GEN-END:variables
 }

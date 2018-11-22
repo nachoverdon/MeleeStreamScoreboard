@@ -47,14 +47,23 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="labelColor" alignment="0" max="32767" attributes="0"/>
-                      <Component id="labelScore" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                  <Component id="comboBoxFlag" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="labelColor" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="labelFlag" alignment="1" min="-2" pref="74" max="-2" attributes="0"/>
                   </Group>
                   <Component id="comboBoxColor" min="-2" pref="84" max="-2" attributes="0"/>
-                  <Component id="spinnerScore" alignment="0" max="32767" attributes="0"/>
-                  <Component id="comboBoxFlag" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="labelScore" pref="0" max="32767" attributes="0"/>
+                          <Component id="spinnerScore" pref="49" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="spinnerPort" max="32767" attributes="0"/>
+                          <Component id="labelPort" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -66,11 +75,13 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labelName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="labelScore" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelPort" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="comboBoxName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="spinnerScore" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="spinnerPort" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -123,6 +134,11 @@
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[65, 14]"/>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Port"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelCharacter">
@@ -202,6 +218,13 @@
         </Property>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[37, 26]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerPort">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="1" maximum="4" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
         </Property>
       </Properties>
     </Component>

@@ -20,10 +20,14 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
      */
     public PlayersInfoPanel() {
         initComponents();
-        panelPlayer1.setBorderTitle("Player 1");
-        panelPlayer2.setBorderTitle("Player 2");
-        panelPlayer3.setBorderTitle("Player 3");
-        panelPlayer4.setBorderTitle("Player 4");
+        PlayerPanel[] panels = new PlayerPanel[]{
+            panelPlayer1, panelPlayer2, panelPlayer3, panelPlayer4
+        };
+        for (int i = 0; i < panels.length; i++) {
+            int n = (i + 1);
+            panels[i].setBorderTitle("Player " + n);
+            panels[i].setPort(n);
+        }
 
         teamsComponents = new JComponent[]{
             panelPlayer3, panelPlayer4, buttonSwap1And3, buttonSwap2And4,
