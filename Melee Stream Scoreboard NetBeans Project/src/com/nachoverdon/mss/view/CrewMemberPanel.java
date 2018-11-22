@@ -6,13 +6,7 @@
 package com.nachoverdon.mss.view;
 
 import com.nachoverdon.mss.model.IconItem;
-import com.nachoverdon.mss.model.Icons;
-import com.nachoverdon.mss.utils.AutoCompletion;
-import com.nachoverdon.mss.utils.FileUtils;
-import java.awt.Component;
-import java.util.Arrays;
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.JList;
+import com.nachoverdon.mss.utils.ComboBoxUtils;
 import org.json.JSONObject;
 
 /**
@@ -27,46 +21,14 @@ public class CrewMemberPanel extends javax.swing.JPanel {
     public CrewMemberPanel() {
         initComponents();
         initFields();
-        disableFields();
     }
     
     private void initFields() {
         try {
-            initNames();
-            initCharacters();
+            ComboBoxUtils.initPlayers(comboBoxName, false);
+            ComboBoxUtils.initCharacters(comboBoxCharacter, false);
         } catch (NullPointerException e) {
             e.printStackTrace();
-        }
-    }
-    
-    private void initNames() {
-        String[] names = FileUtils.getNames();
-        AutoCompletion.enable(comboBoxName);
-
-        comboBoxName.addItem("");
-        for (String n : names) {
-            comboBoxName.addItem(n);
-        }
-    }
-    
-    private void initCharacters() {
-        JSONObject charJson = FileUtils.getCharacters();
-
-        String[] characters = new String[]{};
-        characters = charJson.keySet().toArray(characters);
-        Arrays.sort(characters);
-        comboBoxCharacter.removeAllItems();
-        comboBoxCharacter.setRenderer(new IconRendererNoText());
-
-
-        for (String character : characters) {
-
-            IconItem item = new IconItem(
-                    character,
-                    Icons.getColors().get(character + "Vanilla")
-            );
-
-            comboBoxCharacter.addItem(item);
         }
     }
 
@@ -78,7 +40,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         }
 
         json.put("name", comboBoxName.getSelectedItem());
-        json.put("character", IconItem.getItemName(comboBoxCharacter));
+        json.put("character", ComboBoxUtils.getSelectedItemName(comboBoxCharacter));
         json.put("stocksLeft", getStocksLeft());
         json.put("stocksTaken", stocksLeft.getValue());
 
@@ -109,6 +71,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         stocksTaken = new javax.swing.JSpinner();
 
         comboBoxName.setEditable(true);
+        comboBoxName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         comboBoxName.setToolTipText("");
         comboBoxName.setMaximumSize(new java.awt.Dimension(128, 26));
         comboBoxName.setName(""); // NOI18N
@@ -119,6 +82,7 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         });
 
         comboBoxCharacter.setToolTipText("");
+        comboBoxCharacter.setEnabled(false);
         comboBoxCharacter.setMaximumSize(new java.awt.Dimension(128, 26));
         comboBoxCharacter.setName(""); // NOI18N
         comboBoxCharacter.setPreferredSize(new java.awt.Dimension(32, 20));
@@ -167,13 +131,13 @@ public class CrewMemberPanel extends javax.swing.JPanel {
             enableFields();
         }
 
-        try {
-            updateTotalStocksLeft();
-        } catch (NullPointerException e) {
-            System.out.println("This probably happened while loading the panel,"
-                    + "you can ignore it... I think.");
-            e.printStackTrace();
-        }
+//        try {
+//            updateTotalStocksLeft();
+//        } catch (NullPointerException e) {
+//            System.out.println("This probably happened while loading the panel,"
+//                    + "you can ignore it... I think.");
+//            e.printStackTrace();
+//        }
     }//GEN-LAST:event_comboBoxNameActionPerformed
 
     private void stocksLeftStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_stocksLeftStateChanged
@@ -189,16 +153,19 @@ public class CrewMemberPanel extends javax.swing.JPanel {
         crewPanel.calculateStocksLeft();
     }
     
+    private void setFields(boolean enabled) {
+        comboBoxCharacter.setEnabled(enabled);
+        stocksLeft.setEnabled(enabled);
+        stocksTaken.setEnabled(enabled);
+        updateTotalStocksLeft();
+    }
+    
     private void enableFields() {
-        comboBoxCharacter.setEnabled(true);
-        stocksLeft.setEnabled(true);
-        stocksTaken.setEnabled(true);
+        setFields(true);
     }
     
     private void disableFields() {
-        comboBoxCharacter.setEnabled(false);
-        stocksLeft.setEnabled(false);
-        stocksTaken.setEnabled(false);
+        setFields(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -207,21 +174,4 @@ public class CrewMemberPanel extends javax.swing.JPanel {
     private javax.swing.JSpinner stocksLeft;
     private javax.swing.JSpinner stocksTaken;
     // End of variables declaration//GEN-END:variables
-}
-
-class IconRendererNoText extends DefaultListCellRenderer {    
-    @Override
-    public Component getListCellRendererComponent(JList<?> list, Object value,
-            int index, boolean isSelected, boolean cellHasFocus) {
-        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        
-        IconItem item = (IconItem) value;
-        
-        if (item == null) return this;
-        
-        this.setText("");
-        this.setIcon(item.icon);
-        
-        return this;
-    }
 }

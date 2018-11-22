@@ -70,9 +70,19 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         buttonSwap1And2.setMaximumSize(new java.awt.Dimension(50, 32));
         buttonSwap1And2.setMinimumSize(new java.awt.Dimension(50, 32));
         buttonSwap1And2.setPreferredSize(new java.awt.Dimension(50, 32));
+        buttonSwap1And2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwap1And2ActionPerformed(evt);
+            }
+        });
 
         buttonSwap1And3.setText("↕");
         buttonSwap1And3.setEnabled(false);
+        buttonSwap1And3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwap1And3ActionPerformed(evt);
+            }
+        });
 
         buttonSwap2And4.setText("↕");
         buttonSwap2And4.setEnabled(false);
@@ -148,13 +158,28 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_checkBoxTeamsActionPerformed
 
     private void buttonSwap3And4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwap3And4ActionPerformed
-        // TODO add your handling code here:
+        swapPlayersInfo(panelPlayer3, panelPlayer4);
     }//GEN-LAST:event_buttonSwap3And4ActionPerformed
 
     private void buttonSwap2And4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwap2And4ActionPerformed
-        // TODO add your handling code here:
+        swapPlayersInfo(panelPlayer2, panelPlayer4);
     }//GEN-LAST:event_buttonSwap2And4ActionPerformed
 
+    private void buttonSwap1And2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwap1And2ActionPerformed
+        swapPlayersInfo(panelPlayer1, panelPlayer2);
+    }//GEN-LAST:event_buttonSwap1And2ActionPerformed
+
+    private void buttonSwap1And3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwap1And3ActionPerformed
+        swapPlayersInfo(panelPlayer1, panelPlayer3);
+    }//GEN-LAST:event_buttonSwap1And3ActionPerformed
+
+    private void swapPlayersInfo(PlayerPanel p1, PlayerPanel p2) {
+        JSONObject json1 = p1.getInfo(),
+            json2 = p2.getInfo();
+        p1.setInfo(json2);
+        p2.setInfo(json1);
+    }
+    
     private boolean isTeams() {
         return checkBoxTeams.isSelected();
     }

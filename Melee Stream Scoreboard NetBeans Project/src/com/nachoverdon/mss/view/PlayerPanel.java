@@ -9,12 +9,11 @@ import com.nachoverdon.mss.model.FlagRenderer;
 import com.nachoverdon.mss.model.IconItem;
 import com.nachoverdon.mss.model.IconRenderer;
 import com.nachoverdon.mss.model.Icons;
-import com.nachoverdon.mss.utils.AutoCompletion;
+import com.nachoverdon.mss.utils.ComboBoxUtils;
 import com.nachoverdon.mss.utils.FileUtils;
 
 import java.util.Arrays;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 import org.json.*;
 /**
@@ -179,8 +178,8 @@ public class PlayerPanel extends javax.swing.JPanel {
     
     private void initFields() {
         try {
-            initNames();
-            initCharacters();
+            ComboBoxUtils.initPlayers(comboBoxName);
+            ComboBoxUtils.initCharacters(comboBoxCharacter);
             initSponsors();
             initFlags();
         } catch (NullPointerException e) {
@@ -188,43 +187,13 @@ public class PlayerPanel extends javax.swing.JPanel {
         }
     }
     
-    private void initNames() {
-        comboBoxName.addItem("");
-        
-        for (String name: FileUtils.getNames()) {
-            comboBoxName.addItem(name.trim());
-        }
-        
-        AutoCompletion.enable(comboBoxName);
-    }
-    
-    private void initCharacters() {
-        comboBoxCharacter.removeAllItems();
-        comboBoxCharacter.setRenderer(new IconRenderer());
-
-        JSONObject charJson = FileUtils.getCharacters();
-        
-        String[] characters = new String[]{};
-        characters = charJson.keySet().toArray(characters);
-        Arrays.sort(characters);
-        
-        for (String character: characters) {
-            
-            IconItem item = new IconItem(
-                character,
-                Icons.getColors().get(character + "Vanilla")
-            );
-
-            comboBoxCharacter.addItem(item);
-        }
-    }
-    
     private void initSponsors() {
+        comboBoxSponsor.removeAllItems();
+        comboBoxSponsor.setRenderer(new IconRenderer());
+        
         JSONObject json = FileUtils.getSponsors();
         ImageIcon noSponsor = Icons.getSponsors().get("No sponsor");
         
-        comboBoxSponsor.removeAllItems();
-        comboBoxSponsor.setRenderer(new IconRenderer());        
         comboBoxSponsor.addItem(new IconItem("No sponsor", noSponsor));
         
         String[] sponsors = new String[]{};
@@ -256,7 +225,8 @@ public class PlayerPanel extends javax.swing.JPanel {
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
-//        JSONObject file = JSONReader.read("data/players.json");
+        // TODO: allow new names, add them to json
+        // JSONObject file = JSONReader.read("data/players.json");
         
         // check if new name is in json, and add it if not
         // save file
@@ -295,14 +265,26 @@ public class PlayerPanel extends javax.swing.JPanel {
         json.put("score", spinnerScore.getValue());
         
         JSONObject character = new JSONObject();
-        character.put("name", IconItem.getItemName(comboBoxCharacter));
-        character.put("color", IconItem.getItemName(comboBoxColor));
+        character.put("name", ComboBoxUtils.getSelectedItemName(comboBoxCharacter));
+        character.put("color", ComboBoxUtils.getSelectedItemName(comboBoxColor));
         
         json.put("character", character);
-        json.put("sponsor", IconItem.getItemName(comboBoxSponsor));
+        json.put("sponsor", ComboBoxUtils.getSelectedItemName(comboBoxSponsor));
         json.put("flag", comboBoxFlag.getSelectedItem());
         
         return json;
+    }
+    
+    public void setInfo(JSONObject json) {
+        comboBoxName.setSelectedItem(json.getString("name"));
+        spinnerScore.setValue(json.getInt("score"));
+        
+        JSONObject ch = json.getJSONObject("character");
+        ComboBoxUtils.setSelectedByName(comboBoxCharacter, ch.getString("name"));
+        ComboBoxUtils.setSelectedByName(comboBoxColor, ch.getString("color"));
+        
+        ComboBoxUtils.setSelectedByName(comboBoxSponsor, json.getString("sponsor"));
+        comboBoxFlag.setSelectedItem(json.getString("flag"));
     }
     
     private void comboBoxCharacterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxCharacterActionPerformed

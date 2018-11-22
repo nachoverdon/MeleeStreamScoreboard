@@ -33,12 +33,11 @@
                   <Component id="comboBoxName" pref="220" max="32767" attributes="0"/>
                   <Component id="labelName" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="labelStocks" max="32767" attributes="0"/>
-                  <Component id="stocksLeft" max="32767" attributes="0"/>
+                  <Component id="stocksLeft" min="-2" pref="82" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Component id="jScrollPane" alignment="0" max="32767" attributes="0"/>
       </Group>

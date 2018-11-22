@@ -5,8 +5,6 @@
  */
 package com.nachoverdon.mss.view;
 
-import com.nachoverdon.mss.model.IconItem;
-import javax.swing.JComboBox;
 import javax.swing.border.TitledBorder;
 import org.json.JSONObject;
 
@@ -135,11 +133,10 @@ public class CrewPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(comboBoxName, 0, 220, Short.MAX_VALUE)
                     .addComponent(labelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelStocks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(stocksLeft))
-                .addContainerGap())
+                    .addComponent(stocksLeft, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addComponent(jScrollPane)
         );
         layout.setVerticalGroup(
