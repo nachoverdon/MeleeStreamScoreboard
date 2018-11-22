@@ -11,7 +11,7 @@
   },
   "players": {
     "player1": {
-      "score": 0,
+      "score": 2,
       "sponsor": "No sponsor",
       "character": {
         "color": "Vanilla",
@@ -19,7 +19,7 @@
       },
       "flag": "ad",
       "port": 1,
-      "name": ""
+      "name": "Brail"
     },
     "player2": {
       "score": 0,
@@ -30,7 +30,7 @@
       },
       "flag": "ad",
       "port": 2,
-      "name": ""
+      "name": "Dabe"
     }
   },
   "crews": {

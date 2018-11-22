@@ -6,6 +6,7 @@
 package com.nachoverdon.mss.view;
 
 import javax.swing.JComponent;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -210,6 +211,19 @@ public class PlayersInfoPanel extends javax.swing.JPanel {
         }
         
         return json;
+    }
+    
+    public void setInfo(JSONObject json) {
+        panelPlayer1.setInfo(json.getJSONObject("player1"));
+        panelPlayer2.setInfo(json.getJSONObject("player2"));
+        
+        try {
+            JSONObject p3 = json.getJSONObject("player3"),
+                p4 = json.getJSONObject("player4");
+        } catch (JSONException e) {
+            // No teams
+        }
+        
     }
 
 

@@ -150,6 +150,8 @@ public class MainWindow extends javax.swing.JFrame {
         JSONObject json = FileUtils.readJSON("output/output.json"),
             crews = json.getJSONObject("crews");
         
+        playersInfoPanel.setInfo(json.getJSONObject("players"));
+        
         if (crews != null) {
             crewBattlePanel.setInfo(crews);
         }
