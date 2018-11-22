@@ -27,6 +27,8 @@ public class FileUtils {
     private static String[] names, rounds, casters;
     private static JSONObject charactersJson, sponsorsJson;
     
+    // Read the .txt, get the values and sort them alphabetically.
+    // If JSON, just get the JSONObjects.
     public static void init() {
         names = readFile(PLAYERS_FILE, true).split("\n");
         Collections.sort(Arrays.asList(names), String.CASE_INSENSITIVE_ORDER);
@@ -49,6 +51,8 @@ public class FileUtils {
         return readFile(filename, false);
     }
     
+    // Reads a file, line by line into a String. Optionally adds line break 
+    // every line.
     public static String readFile(String filename, boolean split) {
         String result = "";
         
@@ -73,6 +77,7 @@ public class FileUtils {
         return result;
     }
     
+    // Writes the content into a file in the given path. Overwrites.
     public static void writeFile(String path, String content) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(path));

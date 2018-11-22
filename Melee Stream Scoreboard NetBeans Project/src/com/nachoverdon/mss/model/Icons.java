@@ -30,6 +30,8 @@ public class Icons {
         isInit = true;
     }
     
+    // Read the data in the characters.json and fills an array of ImageIcons
+    // with them.
     private static void initCharacters() {
         JSONObject charJson = FileUtils.readJSON("data/characters.json")
             .getJSONObject("characters");
@@ -51,6 +53,8 @@ public class Icons {
         }
     }
     
+    // Read the data in the sponsors.json and fills an array of ImageIcons
+    // with them. Also adds a No Sponsor icon.
     private static void initSponsors() {
         JSONObject sponsorsJson = FileUtils.readJSON("data/sponsors.json")
             .getJSONObject("sponsors");
@@ -69,6 +73,8 @@ public class Icons {
         }
     }
     
+    // Makes an icon for every file in the flags directory and fills an array
+    // with them.
     private static void initFlags() {
         File dir = new File("img/icons/flags");
         File[] iconFiles = dir.listFiles();
