@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -147,13 +148,15 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_menuCreditsMouseClicked
 
     private void menuItemLoadPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemLoadPreviousActionPerformed
-        JSONObject json = FileUtils.readJSON("output/output.json"),
-            crews = json.getJSONObject("crews");
+        JSONObject json = FileUtils.readJSON("output/output.json");
         
         playersInfoPanel.setInfo(json.getJSONObject("players"));
+        generalInfoPanel.setInfo(json.getJSONObject("general"));
         
-        if (crews != null) {
-            crewBattlePanel.setInfo(crews);
+        try {
+            crewBattlePanel.setInfo(json.getJSONObject("crews"));
+        } catch (JSONException e) {
+            // No crews
         }
     }//GEN-LAST:event_menuItemLoadPreviousActionPerformed
 

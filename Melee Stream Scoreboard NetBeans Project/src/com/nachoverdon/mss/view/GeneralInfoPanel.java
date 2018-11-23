@@ -313,6 +313,21 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         json.put("twitch", comboBoxTwitch.getSelectedItem());
         return json;
     }
+    
+    public void setInfo(JSONObject json) {
+        comboBoxRound.setSelectedItem(json.getString("round"));
+        spinnerBestOf.setValue(json.getInt("bestof"));
+        comboBoxTournamentName.setSelectedItem(json.getString("tournament"));
+        comboBoxBracket.setSelectedItem(json.getString("bracket"));
+        comboBoxCaster1.setSelectedItem(json.getString("caster1"));
+        comboBoxCaster2.setSelectedItem(json.getString("caster2"));
+        comboBoxPlayerCam1.setSelectedItem(json.getString("player1"));
+        comboBoxPlayerCam2.setSelectedItem(json.getString("player2"));
+        comboBoxPlayerCam3.setSelectedItem(json.getString("player3"));
+        comboBoxPlayerCam4.setSelectedItem(json.getString("player4"));
+        comboBoxWebsite.setSelectedItem(json.getString("website"));
+        comboBoxTwitch.setSelectedItem(json.getString("twitch"));
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonSend;
