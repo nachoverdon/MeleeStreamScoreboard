@@ -244,6 +244,8 @@ public class PlayerPanel extends javax.swing.JPanel {
         for (String flag: flags) {
             comboBoxFlag.addItem(flag);
         }
+        
+        comboBoxFlag.setSelectedItem("us"); // Has to be lower case
     }
     
     private void comboBoxNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNameActionPerformed
