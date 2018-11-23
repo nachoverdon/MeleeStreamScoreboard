@@ -34,6 +34,14 @@ public class CrewBattlePanel extends javax.swing.JPanel {
 
         crewPanel1 = new com.nachoverdon.mss.view.CrewPanel();
         crewPanel2 = new com.nachoverdon.mss.view.CrewPanel();
+        buttonSwap = new javax.swing.JButton();
+
+        buttonSwap.setText("↔");
+        buttonSwap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -41,15 +49,32 @@ public class CrewBattlePanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(crewPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(buttonSwap, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(crewPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(crewPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(crewPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(crewPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(crewPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(225, 225, 225)
+                .addComponent(buttonSwap))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonSwapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapActionPerformed
+        JSONObject crew1 = crewPanel1.getInfo(),
+            crew2 = crewPanel2.getInfo();
+        if (crew1 != null && crew2 != null)  {
+            crewPanel1.setInfo(crew2);
+            crewPanel2.setInfo(crew1);
+        }
+    }//GEN-LAST:event_buttonSwapActionPerformed
 
     public JSONObject getInfo() {
         JSONObject json = new JSONObject(),
@@ -69,14 +94,15 @@ public class CrewBattlePanel extends javax.swing.JPanel {
             JSONObject crew1 = json.getJSONObject("crew1"),
                 crew2 = json.getJSONObject("crew2");
 
-            if (crew1 != null) crewPanel1.setInfo(crew1);
-            if (crew2 != null) crewPanel2.setInfo(crew2);
+            crewPanel1.setInfo(crew1);
+            crewPanel2.setInfo(crew2);
         } catch (JSONException e) {
             // No crews
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonSwap;
     private com.nachoverdon.mss.view.CrewPanel crewPanel1;
     private com.nachoverdon.mss.view.CrewPanel crewPanel2;
     // End of variables declaration//GEN-END:variables
