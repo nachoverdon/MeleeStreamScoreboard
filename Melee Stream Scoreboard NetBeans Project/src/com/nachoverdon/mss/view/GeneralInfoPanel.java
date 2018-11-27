@@ -170,6 +170,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         buttonGetDataFromPlayerPanel.setText("📑");
         buttonGetDataFromPlayerPanel.setToolTipText("Get player names from the Players panel");
+        buttonGetDataFromPlayerPanel.setPreferredSize(new java.awt.Dimension(43, 20));
         buttonGetDataFromPlayerPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonGetDataFromPlayerPanelActionPerformed(evt);
@@ -280,7 +281,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonSwapPlayerCam1And3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonGetDataFromPlayerPanel)
+                    .addComponent(buttonGetDataFromPlayerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(buttonSwapPlayerCam2And4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelPlayerCam4)
                     .addComponent(labelPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))

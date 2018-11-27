@@ -441,6 +441,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="\ud83d\udcd1" containsInvalidXMLChars="true"/>
         <Property name="toolTipText" type="java.lang.String" value="Get player names from the Players panel"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[43, 20]"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonGetDataFromPlayerPanelActionPerformed"/>
