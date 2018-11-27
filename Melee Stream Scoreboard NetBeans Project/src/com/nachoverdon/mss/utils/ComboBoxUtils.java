@@ -87,4 +87,11 @@ public class ComboBoxUtils {
     public static void initCharacters(JComboBox<IconItem> comboBox) {
         initCharacters(comboBox, true);
     }
+    
+    public static void swapSelectedItems(JComboBox<String> comboBox1, JComboBox<String> comboBox2) {
+        Object item1 = comboBox1.getSelectedItem(),
+                item2 = comboBox2.getSelectedItem();
+        comboBox1.setSelectedItem(item2);
+        comboBox2.setSelectedItem(item1);
+    }
 }

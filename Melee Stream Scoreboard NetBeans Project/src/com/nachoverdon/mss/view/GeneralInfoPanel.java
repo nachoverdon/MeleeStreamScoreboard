@@ -42,6 +42,10 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         labelBracket = new javax.swing.JLabel();
         comboBoxTournamentName = new javax.swing.JComboBox<>();
         comboBoxBracket = new javax.swing.JComboBox<>();
+        labelWebsite = new javax.swing.JLabel();
+        labelTwitch = new javax.swing.JLabel();
+        comboBoxWebsite = new javax.swing.JComboBox<>();
+        comboBoxTwitch = new javax.swing.JComboBox<>();
         labelCaster1 = new javax.swing.JLabel();
         labelCaster2 = new javax.swing.JLabel();
         comboBoxCaster1 = new javax.swing.JComboBox<>();
@@ -54,20 +58,15 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         labelPlayerCam4 = new javax.swing.JLabel();
         comboBoxPlayerCam3 = new javax.swing.JComboBox<>();
         comboBoxPlayerCam4 = new javax.swing.JComboBox<>();
-        labelWebsite = new javax.swing.JLabel();
-        labelTwitch = new javax.swing.JLabel();
-        comboBoxWebsite = new javax.swing.JComboBox<>();
-        comboBoxTwitch = new javax.swing.JComboBox<>();
-        labelMessage = new javax.swing.JLabel();
-        comboBoxMessage = new javax.swing.JComboBox<>();
-        buttonSend = new javax.swing.JButton();
-
-        setMaximumSize(new java.awt.Dimension(532, 365));
-        setMinimumSize(new java.awt.Dimension(532, 365));
-        setPreferredSize(new java.awt.Dimension(532, 365));
+        buttonSwapCasters = new javax.swing.JButton();
+        buttonSwapPlayerCam1And2 = new javax.swing.JButton();
+        buttonSwapPlayerCam3And4 = new javax.swing.JButton();
+        buttonSwapPlayerCam1And3 = new javax.swing.JButton();
+        buttonSwapPlayerCam2And4 = new javax.swing.JButton();
 
         labelRound.setText("Round");
 
+        labelBestOf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelBestOf.setText("Best Of");
 
         comboBoxRound.setEditable(true);
@@ -75,6 +74,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         labelTournamentName.setText("Tournament name");
 
+        labelBracket.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelBracket.setText("Bracket");
 
         comboBoxTournamentName.setEditable(true);
@@ -83,8 +83,20 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         comboBoxBracket.setEditable(true);
         comboBoxBracket.setMaximumSize(new java.awt.Dimension(128, 26));
 
+        labelWebsite.setText("Website");
+
+        labelTwitch.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        labelTwitch.setText("Twitch");
+
+        comboBoxWebsite.setEditable(true);
+        comboBoxWebsite.setMaximumSize(new java.awt.Dimension(128, 26));
+
+        comboBoxTwitch.setEditable(true);
+        comboBoxTwitch.setMaximumSize(new java.awt.Dimension(128, 26));
+
         labelCaster1.setText("Caster 1");
 
+        labelCaster2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelCaster2.setText("Caster 2");
 
         comboBoxCaster1.setEditable(true);
@@ -95,6 +107,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         labelPlayerCam1.setText("Player Cam 1");
 
+        labelPlayerCam2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelPlayerCam2.setText("Player Cam 2");
 
         comboBoxPlayerCam1.setEditable(true);
@@ -105,6 +118,7 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
 
         labelPlayerCam3.setText("Player Cam 3");
 
+        labelPlayerCam4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         labelPlayerCam4.setText("Player Cam 4");
 
         comboBoxPlayerCam3.setEditable(true);
@@ -113,76 +127,98 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         comboBoxPlayerCam4.setEditable(true);
         comboBoxPlayerCam4.setMaximumSize(new java.awt.Dimension(128, 26));
 
-        labelWebsite.setText("Website");
+        buttonSwapCasters.setText("↔");
+        buttonSwapCasters.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapCastersActionPerformed(evt);
+            }
+        });
 
-        labelTwitch.setText("Twitch");
+        buttonSwapPlayerCam1And2.setText("↔");
+        buttonSwapPlayerCam1And2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapPlayerCam1And2ActionPerformed(evt);
+            }
+        });
 
-        comboBoxWebsite.setEditable(true);
-        comboBoxWebsite.setMaximumSize(new java.awt.Dimension(128, 26));
+        buttonSwapPlayerCam3And4.setText("↔");
+        buttonSwapPlayerCam3And4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapPlayerCam3And4ActionPerformed(evt);
+            }
+        });
 
-        comboBoxTwitch.setEditable(true);
-        comboBoxTwitch.setMaximumSize(new java.awt.Dimension(128, 26));
+        buttonSwapPlayerCam1And3.setText("↕");
+        buttonSwapPlayerCam1And3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapPlayerCam1And3ActionPerformed(evt);
+            }
+        });
 
-        labelMessage.setText("Message");
-
-        comboBoxMessage.setEditable(true);
-        comboBoxMessage.setMaximumSize(new java.awt.Dimension(128, 26));
-
-        buttonSend.setText("Send");
+        buttonSwapPlayerCam2And4.setText("↕");
+        buttonSwapPlayerCam2And4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSwapPlayerCam2And4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(comboBoxMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(labelMessage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(comboBoxPlayerCam3, 0, 255, Short.MAX_VALUE)
-                                .addComponent(labelPlayerCam3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelRound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(comboBoxRound, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                .addComponent(comboBoxTournamentName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(comboBoxPlayerCam4, 0, 255, Short.MAX_VALUE)
-                                .addComponent(labelPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(labelWebsite, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                .addComponent(comboBoxWebsite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelCaster1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboBoxCaster1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(labelPlayerCam1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
+                                    .addComponent(comboBoxPlayerCam1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(buttonSwapCasters)
+                                    .addComponent(buttonSwapPlayerCam1And2))))
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(labelCaster1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(labelRound, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(comboBoxRound, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(comboBoxCaster1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(labelPlayerCam1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                                        .addComponent(labelTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                                        .addComponent(comboBoxTournamentName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(comboBoxPlayerCam1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(6, 6, 6)))
+                                .addComponent(comboBoxBracket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelBracket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(spinnerBestOf)
+                                .addComponent(labelBestOf, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(comboBoxTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(labelPlayerCam2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(comboBoxCaster2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(labelCaster2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBoxBracket, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labelBracket, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(spinnerBestOf)
-                                .addComponent(labelBestOf, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(comboBoxPlayerCam2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(labelWebsite, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                            .addComponent(comboBoxWebsite, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(comboBoxPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelPlayerCam3)
+                                .addGap(153, 153, 153)
+                                .addComponent(buttonSwapPlayerCam1And3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonSwapPlayerCam3And4)
+                        .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(comboBoxTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelTwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttonSwapPlayerCam2And4)
+                                .addGap(153, 153, 153)
+                                .addComponent(labelPlayerCam4))
+                            .addComponent(comboBoxPlayerCam4, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -206,12 +242,21 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                     .addComponent(comboBoxTournamentName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelTwitch)
+                    .addComponent(labelWebsite))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxTwitch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboBoxWebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCaster1)
                     .addComponent(labelCaster2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxCaster1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxCaster2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxCaster2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSwapCasters))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPlayerCam1)
@@ -219,32 +264,44 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxPlayerCam1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxPlayerCam2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelPlayerCam4))
+                    .addComponent(comboBoxPlayerCam2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSwapPlayerCam1And2))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelPlayerCam4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(buttonSwapPlayerCam1And3)
+                        .addComponent(buttonSwapPlayerCam2And4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxPlayerCam3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelTwitch)
-                    .addComponent(labelWebsite))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxTwitch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(comboBoxWebsite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(labelMessage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSend))
+                    .addComponent(comboBoxPlayerCam4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(buttonSwapPlayerCam3And4))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonSwapCastersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapCastersActionPerformed
+        ComboBoxUtils.swapSelectedItems(comboBoxCaster1, comboBoxCaster2);
+    }//GEN-LAST:event_buttonSwapCastersActionPerformed
+
+    private void buttonSwapPlayerCam1And2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapPlayerCam1And2ActionPerformed
+        ComboBoxUtils.swapSelectedItems(comboBoxPlayerCam1, comboBoxPlayerCam2);
+    }//GEN-LAST:event_buttonSwapPlayerCam1And2ActionPerformed
+
+    private void buttonSwapPlayerCam1And3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapPlayerCam1And3ActionPerformed
+        ComboBoxUtils.swapSelectedItems(comboBoxPlayerCam1, comboBoxPlayerCam3);
+    }//GEN-LAST:event_buttonSwapPlayerCam1And3ActionPerformed
+
+    private void buttonSwapPlayerCam2And4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapPlayerCam2And4ActionPerformed
+        ComboBoxUtils.swapSelectedItems(comboBoxPlayerCam2, comboBoxPlayerCam4);
+    }//GEN-LAST:event_buttonSwapPlayerCam2And4ActionPerformed
+
+    private void buttonSwapPlayerCam3And4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSwapPlayerCam3And4ActionPerformed
+        ComboBoxUtils.swapSelectedItems(comboBoxPlayerCam3, comboBoxPlayerCam4);
+    }//GEN-LAST:event_buttonSwapPlayerCam3And4ActionPerformed
 
     private void initFields() {
         try {
@@ -268,7 +325,6 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
         AutoCompletion.enable(comboBoxPlayerCam4);
         AutoCompletion.enable(comboBoxWebsite);
         AutoCompletion.enable(comboBoxTwitch);
-        AutoCompletion.enable(comboBoxMessage);
     }
     
     private void initRounds() {
@@ -330,11 +386,14 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonSend;
+    private javax.swing.JButton buttonSwapCasters;
+    private javax.swing.JButton buttonSwapPlayerCam1And2;
+    private javax.swing.JButton buttonSwapPlayerCam1And3;
+    private javax.swing.JButton buttonSwapPlayerCam2And4;
+    private javax.swing.JButton buttonSwapPlayerCam3And4;
     private javax.swing.JComboBox<String> comboBoxBracket;
     private javax.swing.JComboBox<String> comboBoxCaster1;
     private javax.swing.JComboBox<String> comboBoxCaster2;
-    private javax.swing.JComboBox<String> comboBoxMessage;
     private javax.swing.JComboBox<String> comboBoxPlayerCam1;
     private javax.swing.JComboBox<String> comboBoxPlayerCam2;
     private javax.swing.JComboBox<String> comboBoxPlayerCam3;
@@ -347,7 +406,6 @@ public class GeneralInfoPanel extends javax.swing.JPanel {
     private javax.swing.JLabel labelBracket;
     private javax.swing.JLabel labelCaster1;
     private javax.swing.JLabel labelCaster2;
-    private javax.swing.JLabel labelMessage;
     private javax.swing.JLabel labelPlayerCam1;
     private javax.swing.JLabel labelPlayerCam2;
     private javax.swing.JLabel labelPlayerCam3;
