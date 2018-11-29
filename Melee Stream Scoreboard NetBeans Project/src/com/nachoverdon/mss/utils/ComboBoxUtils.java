@@ -74,7 +74,7 @@ public class ComboBoxUtils {
         Arrays.sort(characters);
 
         for (String character : characters) {
-
+            
             IconItem item = new IconItem(
                     character,
                     Icons.getColors().get(character + "Vanilla")

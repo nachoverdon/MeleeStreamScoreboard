@@ -1,17 +1,13 @@
 {
   "general": {
-    "website": "wfdsfadsfa",
-    "twitch": "afdfdasfdasfads",
-    "round": "L. Quarters",
-    "player1": "Azu",
-    "player2": "bazoo",
-    "player3": "Brail",
-    "player4": "Akif",
-    "bracket": "231123",
-    "bestof": 2,
-    "tournament": "wtf",
-    "caster1": "Dani Norimaki",
-    "caster2": "El_Bardo"
+    "round": "",
+    "player1": "",
+    "player2": "",
+    "player3": "",
+    "player4": "",
+    "bestof": 0,
+    "caster1": "",
+    "caster2": ""
   },
   "players": {
     "player1": {
@@ -21,7 +17,7 @@
         "color": "Vanilla",
         "name": "Bowser"
       },
-      "flag": "ad",
+      "flag": "us",
       "port": 1,
       "name": ""
     },
@@ -32,9 +28,31 @@
         "color": "Vanilla",
         "name": "Bowser"
       },
-      "flag": "ad",
+      "flag": "us",
       "port": 2,
       "name": ""
+    }
+  },
+  "crews": {
+    "crew1": {
+      "members": {"player1": {
+        "character": "",
+        "stocksTaken": 0,
+        "name": "Azu",
+        "stocksLeft": 4
+      }},
+      "name": "test",
+      "stocksLeft": 4
+    },
+    "crew2": {
+      "members": {"player1": {
+        "character": "",
+        "stocksTaken": 0,
+        "name": "Akif",
+        "stocksLeft": 4
+      }},
+      "name": "testata",
+      "stocksLeft": 4
     }
   }
 }
